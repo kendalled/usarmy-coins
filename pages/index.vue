@@ -1,11 +1,18 @@
 <template>
   <div>
-    <!-- <NuxtRouteAnnouncer /> -->
-    <NavBar />
+    <ZeroNavbar />
+    <AnimatedHero />
+    <ContentSection />
+    <ZeroHero />
     <VideoHero class="md:-mt-14" />
     <BentoGrid />
     <SlidingCoins />
-    <ContentSection />
-    <!-- <NuxtWelcome /> -->
   </div>
 </template>
+
+<style scoped>
+  html, body {
+    background: #000; /* Replace with your hero/nav background color */
+    overscroll-behavior: none; /* Optional: disables bounce effect in some browsers */
+  }
+</style>
