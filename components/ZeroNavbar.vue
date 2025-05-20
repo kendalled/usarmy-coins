@@ -4,7 +4,7 @@
       <div class="flex items-center justify-between">
         <!-- Logo -->
         <div class="flex items-center">
-          <a href="/" class="flex items-center">
+          <a href="#" class="flex items-center">
             <span class="sr-only">US Army Coins</span>
             <svg class="h-8 w-8 mr-2" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="20" cy="20" r="18" fill="#181d23" stroke="#ea580c" stroke-width="3" />
@@ -17,17 +17,17 @@
         
         <!-- Desktop Navigation -->
         <nav class="hidden md:flex items-center space-x-8">
-          <a href="/pricing" class="text-white hover:text-orange-500 transition-colors duration-300 text-sm font-medium">Pricing</a>
-          <a href="/units-departments" class="text-white hover:text-orange-500 transition-colors duration-300 text-sm font-medium">Units & Departments</a>
-          <a href="/products" class="text-white hover:text-orange-500 transition-colors duration-300 text-sm font-medium">Products</a>
-          <a href="/blog" class="text-white hover:text-orange-500 transition-colors duration-300 text-sm font-medium">Blog</a>
-          <a href="/gallery" class="text-white hover:text-orange-500 transition-colors duration-300 text-sm font-medium">Gallery</a>
+          <a href="#" class="text-white hover:text-orange-500 transition-colors duration-300 text-sm font-medium">Pricing</a>
+          <a href="#" class="text-white hover:text-orange-500 transition-colors duration-300 text-sm font-medium">Units & Departments</a>
+          <a href="#" class="text-white hover:text-orange-500 transition-colors duration-300 text-sm font-medium">Products</a>
+          <a href="#" class="text-white hover:text-orange-500 transition-colors duration-300 text-sm font-medium">Blog</a>
+          <a href="#" class="text-white hover:text-orange-500 transition-colors duration-300 text-sm font-medium">Gallery</a>
         </nav>
         
         <!-- Right Side Buttons -->
         <div class="hidden md:flex items-center space-x-4">
-          <a href="/signin" class="text-white hover:text-orange-500 transition-colors duration-300 text-sm font-medium">Sign in</a>
-          <a href="/quote" class="bg-orange-600 hover:bg-orange-700 text-white font-medium py-2 px-4 rounded-md transition-colors duration-300 text-sm">
+          <a href="#" class="text-white hover:text-orange-500 transition-colors duration-300 text-sm font-medium">Sign in</a>
+          <a href="#" class="bg-orange-600 hover:bg-orange-700 text-white font-medium py-2 px-4 rounded-md transition-colors duration-300 text-sm">
             Get a Free Quote
           </a>
         </div>
@@ -48,14 +48,14 @@
     <div v-if="mobileMenuOpen" class="md:hidden bg-black/95 border-t border-gray-800">
       <div class="container mx-auto px-6 py-4">
         <nav class="flex flex-col space-y-4">
-          <a href="/pricing" class="text-white hover:text-orange-500 transition-colors duration-300 py-2">Pricing</a>
-          <a href="/units-departments" class="text-white hover:text-orange-500 transition-colors duration-300 py-2">Units & Departments</a>
-          <a href="/products" class="text-white hover:text-orange-500 transition-colors duration-300 py-2">Products</a>
-          <a href="/blog" class="text-white hover:text-orange-500 transition-colors duration-300 py-2">Blog</a>
-          <a href="/gallery" class="text-white hover:text-orange-500 transition-colors duration-300 py-2">Gallery</a>
+          <a href="#" class="text-white hover:text-orange-500 transition-colors duration-300 py-2">Pricing</a>
+          <a href="#" class="text-white hover:text-orange-500 transition-colors duration-300 py-2">Units & Departments</a>
+          <a href="#" class="text-white hover:text-orange-500 transition-colors duration-300 py-2">Products</a>
+          <a href="#" class="text-white hover:text-orange-500 transition-colors duration-300 py-2">Blog</a>
+          <a href="#" class="text-white hover:text-orange-500 transition-colors duration-300 py-2">Gallery</a>
           <div class="pt-2 border-t border-gray-800 flex flex-col space-y-3">
-            <a href="/signin" class="text-white hover:text-orange-500 transition-colors duration-300 py-2">Sign in</a>
-            <a href="/quote" class="bg-orange-600 hover:bg-orange-700 text-white font-medium py-3 px-4 rounded-md transition-colors duration-300 text-center">
+            <a href="#" class="text-white hover:text-orange-500 transition-colors duration-300 py-2">Sign in</a>
+            <a href="#" class="bg-orange-600 hover:bg-orange-700 text-white font-medium py-3 px-4 rounded-md transition-colors duration-300 text-center">
               Get a Free Quote
             </a>
           </div>
