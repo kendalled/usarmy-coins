@@ -34,19 +34,19 @@
         <dl class="mt-6 grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2">
           <div class="flex flex-col gap-y-2 border-b border-dotted border-slate-700 pb-4">
             <dt class="text-sm/6 text-slate-400">Raised</dt>
-            <dd class="order-first text-6xl font-semibold tracking-tight text-slate-50">$<span class="text-orange-500">150</span>M</dd>
+            <dd class="order-first text-6xl font-semibold tracking-tight text-slate-50">$150M</dd>
           </div>
           <div class="flex flex-col gap-y-2 border-b border-dotted border-slate-700 pb-4">
             <dt class="text-sm/6 text-slate-400">Companies</dt>
-            <dd class="order-first text-6xl font-semibold tracking-tight text-slate-50"><span class="text-orange-500">30</span>K</dd>
+            <dd class="order-first text-6xl font-semibold tracking-tight text-slate-50">30K</dd>
           </div>
           <div class="flex flex-col gap-y-2 max-sm:border-b max-sm:border-dotted max-sm:border-slate-700 max-sm:pb-4">
             <dt class="text-sm/6 text-slate-400">Deals Closed</dt>
-            <dd class="order-first text-6xl font-semibold tracking-tight text-slate-50"><span class="text-orange-500">1.5</span>M</dd>
+            <dd class="order-first text-6xl font-semibold tracking-tight text-slate-50">1.5M</dd>
           </div>
           <div class="flex flex-col gap-y-2">
             <dt class="text-sm/6 text-slate-400">Leads Generated</dt>
-            <dd class="order-first text-6xl font-semibold tracking-tight text-slate-50"><span class="text-orange-500">200</span>M</dd>
+            <dd class="order-first text-6xl font-semibold tracking-tight text-slate-50">200M</dd>
           </div>
         </dl>
       </div>

@@ -6,19 +6,20 @@
       </h2>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-10">
-        <div v-for="(coin, index) in coinTypes" :key="index" 
-             class="group bg-slate-800 rounded-xl p-6 shadow-lg hover:shadow-2xl hover:shadow-orange-600/20 transform hover:-translate-y-2 transition-all duration-300 ease-in-out flex flex-col items-center text-center">
+        <a v-for="(coin, index) in coinTypes" :key="index" 
+           href="#get-a-quote"
+           class="group block bg-slate-800 rounded-xl p-6 shadow-lg hover:shadow-xl hover:shadow-orange-600/10 transform hover:-translate-y-1 transition-all duration-200 ease-in-out flex flex-col items-center text-center h-full hover:ring-1 hover:ring-orange-500/30">
           <div class="relative mb-6 w-40 h-40 md:w-48 md:h-48">
             <img :src="coin.image" :alt="coin.name" 
-                 class="w-full h-full object-contain rounded-full border-4 border-slate-700 group-hover:border-orange-500 transition-colors duration-300" />
-            <div class="absolute inset-0 rounded-full bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-opacity duration-300"></div>
+                 class="w-full h-full object-contain rounded-full border-4 border-slate-700 group-hover:border-orange-500 transition-all duration-200" />
+            <div class="absolute inset-0 rounded-full bg-black bg-opacity-0 group-hover:bg-opacity-5 transition-opacity duration-200"></div>
           </div>
-          <h3 class="text-xl md:text-2xl font-semibold text-slate-100 group-hover:text-orange-400 mb-2 transition-colors duration-300">{{ coin.name }}</h3>
+          <h3 class="text-xl md:text-2xl font-semibold text-slate-100 group-hover:text-orange-400 mb-2 transition-colors duration-200">{{ coin.name }}</h3>
           <p class="text-slate-300 text-sm leading-relaxed flex-grow">{{ coin.description }}</p>
-          <a href="#get-a-quote" class="mt-6 inline-block bg-orange-600 hover:bg-orange-500 text-white font-semibold py-2 px-5 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 ease-in-out text-sm">
+          <span class="mt-6 inline-block bg-orange-600 group-hover:bg-orange-500 text-white font-semibold py-2 px-5 rounded-lg shadow-md transition-all duration-200 ease-in-out text-sm">
             Learn More
-          </a>
-        </div>
+          </span>
+        </a>
       </div>
 
       <div class="text-center mt-16 md:mt-20">
@@ -84,9 +85,14 @@ export default {
 </script>
 
 <style scoped>
-/* Add any specific scoped styles here if needed */
+/* Make sure the link inherits text decoration */
+a {
+  text-decoration: none;
+}
+
+/* Subtle glow on image hover */
 .group:hover .object-contain {
-  box-shadow: 0 0 8px 1px rgba(249, 115, 22, 0.20); /* More subtle orange-500 glow */
-  transition: box-shadow 0.3s ease-in-out;
+  box-shadow: 0 0 6px 1px rgba(249, 115, 22, 0.15);
+  transition: all 0.2s ease-in-out;
 }
 </style>
