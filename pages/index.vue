@@ -2,11 +2,14 @@
   <div>
     <ZeroNavbar />
     <AnimatedHero />
+    <OurCoins />
+    <Process />
     <ContentSection />
-    <ZeroHero />
+    <StorySection />
+    <!-- <ZeroHero />
     <VideoHero class="md:-mt-14" />
     <BentoGrid />
-    <SlidingCoins />
+    <SlidingCoins /> -->
   </div>
 </template>
 
