@@ -4,6 +4,7 @@
     <AnimatedHero />
     <OurCoins />
     <Process />
+    <ZeroTestimonial />
     <ContentSection />
     <StorySection />
     <!-- <ZeroHero />
