@@ -1,6 +1,6 @@
 <template>
   <header class="fixed top-0 left-0 w-full bg-black/10 backdrop-blur-sm z-50 transition-all duration-300" :class="{ 'bg-black/30': scrolled }">
-    <div class="container mx-auto px-6 py-4 max-w-[84rem]">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 max-w-[84rem]">
       <div class="flex items-center justify-between">
         <!-- Logo -->
         <div class="flex items-center">
