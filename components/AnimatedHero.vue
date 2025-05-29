@@ -17,7 +17,7 @@
       
 
       
-      <div class="container mx-auto px-6 relative z-10 py-20 max-w-[84rem]">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 max-w-[84rem]">
         <div class="flex flex-col lg:flex-row items-center">
           <div class="lg:w-3/5 text-center lg:text-left mb-12 lg:mb-0">
             <div class="inline-block px-3 py-1 bg-orange-600 text-white text-sm font-semibold rounded-full mb-6 uppercase">
