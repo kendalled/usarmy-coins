@@ -135,7 +135,7 @@
                         <span class="ml-3 text-sm font-medium text-slate-200">{{ formatQuantity(option.amount) }}</span>
                       </div>
                       <div class="text-right flex items-center space-x-3">
-                        <span class="text-sm font-medium text-slate-300">${{ option.pricePerUnit }} per coin</span>
+                        <span class="text-sm font-medium text-slate-300" v-if="getPricePerUnit(option.amount)">${{ getPricePerUnit(option.amount) }} per coin</span>
                         <span v-if="option.savings" class="text-xs font-semibold bg-orange-500/10 text-orange-400 px-2 py-0.5 rounded-full">
                           SAVE {{ option.savings }}%
                         </span>
@@ -279,16 +279,15 @@ const thumbnails = [
 
 const tabs = ['Description', 'Artwork', 'Turnaround', 'Shipping']
 
-const sizes = ['0.75', '1', '1.25', '1.5', '1.75', '2']
+const sizes = ['1.50', '1.75', '2.0', '2.25', '2.5', '2.75', '3.0']
 
 const quantities = [
-  { amount: 100, pricePerUnit: '2.89', savings: null },
-  { amount: 200, pricePerUnit: '2.30', savings: 20 },
-  { amount: 300, pricePerUnit: '1.70', savings: 41 },
-  { amount: 500, pricePerUnit: '1.40', savings: 52 },
-  { amount: 750, pricePerUnit: '1.31', savings: 55 },
-  { amount: 1000, pricePerUnit: '1.23', savings: 57 },
-  { amount: 'Other', pricePerUnit: null, savings: null }
+  { amount: 50, pricePerUnit: null, savings: null },
+  { amount: 100, pricePerUnit: null, savings: 40 },
+  { amount: 300, pricePerUnit: null, savings: 48 },
+  { amount: 500, pricePerUnit: null, savings: 49 },
+  { amount: 1000, pricePerUnit: null, savings: 50 },
+  { amount: 2000, pricePerUnit: null, savings: 51 }
 ]
 
 const platingOptions = [
@@ -308,6 +307,66 @@ const attachmentOptions = [
   'No Attachment'
 ]
 
+// Pricing matrix based on size and quantity
+const pricingMatrix = {
+  '1.50': {
+    50: 4.85,
+    100: 2.96,
+    300: 2.50,
+    500: 2.44,
+    1000: 2.40,
+    2000: 2.35
+  },
+  '1.75': {
+    50: 5.35,
+    100: 3.22,
+    300: 2.80,
+    500: 2.73,
+    1000: 2.70,
+    2000: 2.64
+  },
+  '2.0': {
+    50: 5.80,
+    100: 3.52,
+    300: 3.06,
+    500: 2.97,
+    1000: 2.94,
+    2000: 2.88
+  },
+  '2.25': {
+    50: 6.85,
+    100: 4.37,
+    300: 3.69,
+    500: 3.49,
+    1000: 3.42,
+    2000: 3.37
+  },
+  '2.5': {
+    50: 7.26,
+    100: 4.95,
+    300: 3.95,
+    500: 3.91,
+    1000: 3.75,
+    2000: 3.70
+  },
+  '2.75': {
+    50: 8.29,
+    100: 5.66,
+    300: 5.10,
+    500: 4.88,
+    1000: 4.66,
+    2000: 4.61
+  },
+  '3.0': {
+    50: 9.19,
+    100: 6.37,
+    300: 6.25,
+    500: 5.86,
+    1000: 5.53,
+    2000: 5.48
+  }
+}
+
 // Helper function
 const formatQuantity = (quantity) => {
   if (quantity === "Other") return "Other"
@@ -316,12 +375,18 @@ const formatQuantity = (quantity) => {
 
 // Computed properties
 const estimatedTotal = computed(() => {
-  if (selectedQuantity.value === 'Other') return '0.00'
+  if (selectedQuantity.value === 'Other' || !selectedSize.value) return '0.00'
   
-  const qty = quantities.find(q => q.amount === selectedQuantity.value)
-  if (!qty || !qty.pricePerUnit) return '0.00'
+  const price = pricingMatrix[selectedSize.value]?.[selectedQuantity.value]
+  if (!price) return '0.00'
   
-  const total = parseFloat(qty.pricePerUnit) * selectedQuantity.value
+  const total = price * selectedQuantity.value
   return total.toFixed(2)
 })
+
+// Add this new method to get price per unit
+const getPricePerUnit = (quantity) => {
+  if (!selectedSize.value) return null
+  return pricingMatrix[selectedSize.value]?.[quantity]?.toFixed(2)
+}
 </script>
