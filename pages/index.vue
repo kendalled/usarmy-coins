@@ -7,6 +7,7 @@
     <ZeroTestimonial />
     <ContentSection />
     <StorySection />
+    <SiteFooter />
     <!-- <ZeroHero />
     <VideoHero class="md:-mt-14" />
     <BentoGrid />
