@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Enhanced Hero Section with Background Video and Floating Coins -->
-    <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-8 md:pt-28">
+    <section class="relative flex items-center justify-center overflow-hidden pt-20 pb-24 md:pt-32 md:pb-32">
       <div class="absolute inset-0 z-0">
         <video 
           autoplay 
