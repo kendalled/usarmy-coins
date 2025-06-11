@@ -1,5 +1,43 @@
 <template>
-  <div class="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-amber-900/30 pt-24 pb-32">
+  <div class="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-amber-900/30 pt-32 pb-32">
+    <!-- Trust Bar -->
+    <div class="fixed top-[72px] -mt-1 left-0 right-0 bg-gradient-to-r from-slate-800/95 via-slate-800/95 to-slate-800/95 backdrop-blur-sm z-40 border-b border-orange-500/10">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[84rem] py-2">
+        <div class="flex items-center justify-between">
+          <!-- Trust Metrics -->
+          <div class="flex items-center space-x-6 text-sm">
+            <div class="flex items-center text-slate-300">
+              <svg class="w-4 h-4 text-orange-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span><span class="font-semibold text-white">{{ orderCount }}</span> orders this month</span>
+            </div>
+            <div class="hidden sm:flex items-center text-slate-300">
+              <svg class="w-4 h-4 text-orange-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span><span class="font-semibold text-white">100%</span> Made in USA</span>
+            </div>
+          </div>
+          
+          <!-- Live Order Alert -->
+          <div v-if="latestOrder" class="hidden md:block animate-fade-in-out text-sm text-slate-300">
+            <span class="inline-flex items-center">
+              <span class="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
+              {{ latestOrder }}
+            </span>
+          </div>
+          
+          <!-- Production Timer -->
+          <div class="text-sm">
+            <span class="text-orange-400">Order in next </span>
+            <span class="font-mono text-white">{{ productionTimer }}</span>
+            <span class="text-slate-300"> for delivery by {{ deliveryDate }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Breadcrumb -->
     <nav aria-label="Breadcrumb" class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[84rem] py-3">
       <div class="flex items-center space-x-2 text-sm">
@@ -176,20 +214,37 @@
               </svg>
             </button>
             
-            <div v-if="platingExpanded" class="mt-6 space-y-3">
-              <label 
-                v-for="plating in platingOptions" 
-                :key="plating"
-                class="flex items-center space-x-3 cursor-pointer group"
-              >
-                <input 
-                  type="radio" 
-                  :value="plating" 
-                  v-model="selectedPlating"
-                  class="w-4 h-4 text-orange-500 border-slate-600 focus:ring-orange-500 focus:ring-2 bg-slate-700"
+            <div v-if="platingExpanded" class="mt-6">
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                <label 
+                  v-for="plating in platingOptions" 
+                  :key="plating.name"
+                  class="relative cursor-pointer group"
                 >
-                <span class="text-sm font-medium text-slate-200 group-hover:text-orange-400 transition-colors">{{ plating }}</span>
-              </label>
+                  <input 
+                    type="radio" 
+                    :value="plating.name" 
+                    v-model="selectedPlating"
+                    class="sr-only peer"
+                  >
+                  <div class="rounded-xl p-4 bg-slate-700/50 ring-1 ring-white/5 hover:bg-slate-700/70 transition-all duration-200 overflow-hidden peer-checked:ring-2 peer-checked:ring-orange-500 peer-checked:bg-slate-700">
+                    <!-- Image container with adjusted aspect ratio -->
+                    <div class="w-full mb-3 rounded-lg bg-slate-800/50 overflow-hidden" style="aspect-ratio: 685/363;">
+                      <img 
+                        :src="plating.image" 
+                        :alt="plating.name"
+                        class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
+                      >
+                    </div>
+                    <!-- Label -->
+                    <div class="text-sm font-medium text-slate-200 group-hover:text-orange-400 transition-colors text-center">
+                      {{ plating.name }}
+                    </div>
+                    <!-- Selected indicator -->
+                    <div class="absolute top-2 right-2 w-4 h-4 rounded-full bg-orange-500 transform scale-0 peer-checked:scale-100 transition-transform duration-200"></div>
+                  </div>
+                </label>
+              </div>
             </div>
           </div>
 
@@ -214,20 +269,37 @@
               </svg>
             </button>
             
-            <div v-if="attachmentExpanded" class="mt-6 space-y-3">
-              <label 
-                v-for="attachment in attachmentOptions" 
-                :key="attachment"
-                class="flex items-center space-x-3 cursor-pointer group"
-              >
-                <input 
-                  type="radio" 
-                  :value="attachment" 
-                  v-model="selectedAttachment"
-                  class="w-4 h-4 text-orange-500 border-slate-600 focus:ring-orange-500 focus:ring-2 bg-slate-700"
+            <div v-if="attachmentExpanded" class="mt-6">
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                <label 
+                  v-for="attachment in attachmentOptions" 
+                  :key="attachment"
+                  class="relative cursor-pointer group"
                 >
-                <span class="text-sm font-medium text-slate-200 group-hover:text-orange-400 transition-colors">{{ attachment }}</span>
-              </label>
+                  <input 
+                    type="radio" 
+                    :value="attachment" 
+                    v-model="selectedAttachment"
+                    class="sr-only peer"
+                  >
+                  <div class="aspect-square rounded-xl p-4 bg-slate-700/50 ring-1 ring-white/5 hover:bg-slate-700/70 transition-all duration-200 overflow-hidden peer-checked:ring-2 peer-checked:ring-orange-500 peer-checked:bg-slate-700">
+                    <!-- Image container -->
+                    <div class="w-full h-3/4 mb-3 rounded-lg bg-slate-800/50 overflow-hidden">
+                      <img 
+                        :src="`/attachments/${attachment.toLowerCase().replace(' ', '-')}.jpg`" 
+                        :alt="attachment"
+                        class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
+                      >
+                    </div>
+                    <!-- Label -->
+                    <div class="text-sm font-medium text-slate-200 group-hover:text-orange-400 transition-colors text-center">
+                      {{ attachment }}
+                    </div>
+                    <!-- Selected indicator -->
+                    <div class="absolute top-2 right-2 w-4 h-4 rounded-full bg-orange-500 transform scale-0 peer-checked:scale-100 transition-transform duration-200"></div>
+                  </div>
+                </label>
+              </div>
             </div>
           </div>
 
@@ -236,26 +308,71 @@
             <div class="bg-slate-800/95 backdrop-blur-sm rounded-xl p-6 shadow-xl ring-1 ring-white/5">
               <div class="text-center mb-4">
                 <div class="text-slate-400 text-sm font-medium mb-1.5">Estimated Total*</div>
-                <div class="text-3xl font-bold text-white tracking-tight">${{ estimatedTotal }}</div>
-                <div class="text-slate-500 text-xs mt-2">*This is a price estimate. Final price will be determined after artwork approval.</div>
+                <div class="flex items-center justify-center gap-3 mb-1">
+                  <div class="text-lg text-slate-500 line-through">${{ retailPrice }}</div>
+                  <div class="text-3xl font-bold text-white tracking-tight">${{ estimatedTotal }}</div>
+                </div>
+                <div class="text-orange-400 text-sm font-medium">You save: ${{ savings }}</div>
+                <div class="text-slate-500 text-xs mt-2">*Final price determined after artwork approval</div>
               </div>
-              
-              <button class="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold py-3.5 px-6 rounded-lg transform transition-all duration-300 ease-in-out hover:-translate-y-0.5 flex items-center justify-center space-x-2 shadow-lg">
+
+              <button class="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold py-3.5 px-6 rounded-lg transform transition-all duration-300 ease-in-out hover:-translate-y-0.5 flex items-center justify-center space-x-2 shadow-lg mb-6">
                 <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span>Get a Proof</span>
+                <span>Get Your Free Proof</span>
               </button>
+
+              <!-- Value Stack -->
+              <div class="grid grid-cols-2 gap-3">
+                <div class="flex items-start space-x-2">
+                  <svg class="w-4 h-4 text-orange-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span class="text-xs text-slate-300">Free shipping on orders over $500</span>
+                </div>
+                <div class="flex items-start space-x-2">
+                  <svg class="w-4 h-4 text-orange-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span class="text-xs text-slate-300">Unlimited design revisions</span>
+                </div>
+                <div class="flex items-start space-x-2">
+                  <svg class="w-4 h-4 text-orange-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span class="text-xs text-slate-300">Lifetime quality guarantee</span>
+                </div>
+                <div class="flex items-start space-x-2">
+                  <svg class="w-4 h-4 text-orange-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span class="text-xs text-slate-300">Military discount eligible</span>
+                </div>
+              </div>
             </div>
           </div>
+          
         </div>
+      </div>
+    </div>
+    
+    <!-- Full Width Gallery and Testimonials Section -->
+    <div class="mt-24 w-full bg-gradient-to-b from-transparent via-slate-900/50 to-slate-900/50">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[84rem] py-16">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Trusted by Military Units Worldwide</h2>
+          <p class="text-lg text-slate-400 max-w-2xl mx-auto">Join thousands of military units who trust us with their challenge coin traditions.</p>
+        </div>
+        <DeliveredCoinsGallery />
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
+import DeliveredCoinsGallery from './DeliveredCoinsGallery.vue'
 
 // Reactive data
 const selectedImage = ref(0)
@@ -291,12 +408,30 @@ const quantities = [
 ]
 
 const platingOptions = [
-  'Antique Gold',
-  'Antique Silver',
-  'Antique Copper',
-  'Bright Gold',
-  'Bright Silver',
-  'Black Nickel'
+  {
+    name: 'Antique Gold',
+    image: '/plating/usarmy-coin-gold.png'
+  },
+  {
+    name: 'Antique Silver',
+    image: '/plating/usarmy-coin-silver.png'
+  },
+  {
+    name: 'Antique Copper',
+    image: '/plating/usarmy-coin-copper.png'
+  },
+  {
+    name: 'Black Metal',
+    image: '/plating/usarmy-coin-black-metal.png'
+  },
+  {
+    name: 'Polished Silver',
+    image: '/plating/usarmy-coin-silver.png'
+  },
+  {
+    name: 'Nickel',
+    image: '/plating/usarmy-coin-nickle.png'
+  }
 ]
 
 const attachmentOptions = [
@@ -373,6 +508,74 @@ const formatQuantity = (quantity) => {
   return quantity.toLocaleString()
 }
 
+// Trust metrics
+const orderCount = ref(847)
+const productionCapacity = ref(85)
+const latestOrder = ref(null)
+const productionTimer = ref('23:45:12')
+const deliveryDate = ref('May 15')
+
+// Simulated latest orders
+const recentOrders = [
+  'CPT. Mike R. from Fort Bragg ordered 200 coins',
+  'SSG. Sarah T. from Camp Pendleton ordered 100 coins',
+  'LTC. James B. from Fort Hood ordered 300 coins'
+]
+
+// Price calculations
+const retailPrice = computed(() => {
+  if (selectedQuantity.value === 'Other' || !selectedSize.value) return '0.00'
+  
+  const price = pricingMatrix[selectedSize.value]?.[selectedQuantity.value]
+  if (!price) return '0.00'
+  
+  // Add 40% markup for retail price
+  const total = price * selectedQuantity.value * 1.4
+  return total >= 1000 ? total.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : total.toFixed(2)
+})
+
+const savings = computed(() => {
+  if (selectedQuantity.value === 'Other' || !selectedSize.value) return '0.00'
+  
+  const price = pricingMatrix[selectedSize.value]?.[selectedQuantity.value]
+  if (!price) return '0.00'
+  
+  const total = price * selectedQuantity.value
+  const retailTotal = total * 1.4
+  const savingsAmount = retailTotal - total
+  
+  return savingsAmount >= 1000 ? 
+    savingsAmount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : 
+    savingsAmount.toFixed(2)
+})
+
+// Simulate live orders
+onMounted(() => {
+  setInterval(() => {
+    latestOrder.value = recentOrders[Math.floor(Math.random() * recentOrders.length)]
+    setTimeout(() => {
+      latestOrder.value = null
+    }, 5000)
+  }, 15000)
+  
+  // Update production timer
+  const updateTimer = () => {
+    const now = new Date()
+    const end = new Date(now)
+    end.setHours(23, 59, 59)
+    
+    const diff = end - now
+    const hours = Math.floor(diff / (1000 * 60 * 60))
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000)
+    
+    productionTimer.value = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
+  }
+  
+  updateTimer()
+  setInterval(updateTimer, 1000)
+})
+
 // Computed properties
 const estimatedTotal = computed(() => {
   if (selectedQuantity.value === 'Other' || !selectedSize.value) return '0.00'
@@ -381,7 +584,7 @@ const estimatedTotal = computed(() => {
   if (!price) return '0.00'
   
   const total = price * selectedQuantity.value
-  return total.toFixed(2)
+  return total >= 1000 ? total.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : total.toFixed(2)
 })
 
 // Add this new method to get price per unit
@@ -389,4 +592,72 @@ const getPricePerUnit = (quantity) => {
   if (!selectedSize.value) return null
   return pricingMatrix[selectedSize.value]?.[quantity]?.toFixed(2)
 }
+
+// Client-side only code
+const persistSelections = () => {
+  if (process.client) {
+    const selections = {
+      selectedImage: selectedImage.value,
+      activeTab: activeTab.value,
+      selectedSize: selectedSize.value,
+      selectedQuantity: selectedQuantity.value,
+      selectedPlating: selectedPlating.value,
+      selectedAttachment: selectedAttachment.value,
+      platingExpanded: platingExpanded.value,
+      attachmentExpanded: attachmentExpanded.value
+    }
+    localStorage.setItem('coinSelections', JSON.stringify(selections))
+  }
+}
+
+// Load saved selections on mount
+onMounted(() => {
+  if (process.client) {
+    try {
+      const saved = localStorage.getItem('coinSelections')
+      if (saved) {
+        const selections = JSON.parse(saved)
+        selectedImage.value = selections.selectedImage
+        activeTab.value = selections.activeTab
+        selectedSize.value = selections.selectedSize
+        selectedQuantity.value = selections.selectedQuantity
+        selectedPlating.value = selections.selectedPlating
+        selectedAttachment.value = selections.selectedAttachment
+        platingExpanded.value = selections.platingExpanded
+        attachmentExpanded.value = selections.attachmentExpanded
+      }
+    } catch (e) {
+      console.error('Error loading saved selections:', e)
+    }
+  }
+})
+
+// Watch for changes and persist
+watch(
+  [
+    selectedImage,
+    activeTab,
+    selectedSize,
+    selectedQuantity,
+    selectedPlating,
+    selectedAttachment,
+    platingExpanded,
+    attachmentExpanded
+  ],
+  () => persistSelections(),
+  { deep: true }
+)
 </script>
+
+<style>
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-10px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-10px); }
+}
+
+.animate-fade-in-out {
+  animation: fadeInOut 5s ease-in-out;
+}
+</style>
