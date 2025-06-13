@@ -322,34 +322,6 @@
                 </svg>
                 <span>Get Your Free Proof</span>
               </button>
-
-              <!-- Value Stack -->
-              <div class="grid grid-cols-2 gap-3">
-                <div class="flex items-start space-x-2">
-                  <svg class="w-4 h-4 text-orange-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span class="text-xs text-slate-300">Free shipping on orders over $500</span>
-                </div>
-                <div class="flex items-start space-x-2">
-                  <svg class="w-4 h-4 text-orange-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span class="text-xs text-slate-300">Unlimited design revisions</span>
-                </div>
-                <div class="flex items-start space-x-2">
-                  <svg class="w-4 h-4 text-orange-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span class="text-xs text-slate-300">Lifetime quality guarantee</span>
-                </div>
-                <div class="flex items-start space-x-2">
-                  <svg class="w-4 h-4 text-orange-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span class="text-xs text-slate-300">Military discount eligible</span>
-                </div>
-              </div>
             </div>
           </div>
           
@@ -386,12 +358,12 @@ const attachmentExpanded = ref(false)
 
 // Static data
 const thumbnails = [
-  '/branches/army-coin-render.png',
-  '/branches/navy-coin-render.png',
-  '/branches/air-force-coin-render.png',
-  '/branches/marine-corps-coin-render.png',
-  '/branches/coast-guard-coin-render.png',
-  '/branches/space-force-coin-render.png'
+  '/images/coins/army-coin-render.png',
+  '/images/coins/navy-coin-render.png',
+  '/images/coins/air-force-coin-render.png',
+  '/images/coins/marine-corps-coin-render.png',
+  '/images/coins/coast-guard-coin-render.png',
+  '/images/coins/space-force-coin-render.png'
 ]
 
 const tabs = ['Description', 'Artwork', 'Turnaround', 'Shipping']
@@ -410,27 +382,27 @@ const quantities = [
 const platingOptions = [
   {
     name: 'Antique Gold',
-    image: '/plating/usarmy-coin-gold.png'
+    image: '/images/plating/usarmy-coin-gold.png'
   },
   {
     name: 'Antique Silver',
-    image: '/plating/usarmy-coin-silver.png'
+    image: '/images/plating/usarmy-coin-silver.png'
   },
   {
     name: 'Antique Copper',
-    image: '/plating/usarmy-coin-copper.png'
+    image: '/images/plating/usarmy-coin-copper.png'
   },
   {
     name: 'Black Metal',
-    image: '/plating/usarmy-coin-black-metal.png'
+    image: '/images/plating/usarmy-coin-black-metal.png'
   },
   {
     name: 'Polished Silver',
-    image: '/plating/usarmy-coin-silver.png'
+    image: '/images/plating/usarmy-coin-silver.png'
   },
   {
     name: 'Nickel',
-    image: '/plating/usarmy-coin-nickle.png'
+    image: '/images/plating/usarmy-coin-nickle.png'
   }
 ]
 

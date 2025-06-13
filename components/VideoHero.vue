@@ -23,7 +23,7 @@
           </div>
       </div>
       <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-          <img class="object-cover object-center rounded-lg" alt="hero" src="/challenge-coin-collection.jpg">
+          <img class="object-cover object-center rounded-lg" alt="hero" src="/images/misc/challenge-coin-collection.jpg">
       </div>
   </div>
   </div>

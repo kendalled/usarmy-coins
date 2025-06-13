@@ -49,7 +49,7 @@
           <div id="tabs-1-panel-1" class="space-y-10 px-4 pb-8 pt-10" aria-labelledby="tabs-1-tab-1" role="tabpanel" tabindex="0">
             <div class="grid grid-cols-2 gap-x-4">
               <div class="group relative text-sm">
-                <img src="https://tailwindui.com/plus/img/ecommerce-images/mega-menu-category-01.jpg" alt="Models sitting back to back, wearing Basic Tee in black and bone." class="aspect-square w-full rounded-lg bg-gray-100 object-cover group-hover:opacity-75">
+                <img src="/images/misc/navy-coin-example.jpg" alt="Models sitting back to back, wearing Basic Tee in black and bone." class="aspect-square w-full rounded-lg bg-gray-100 object-cover group-hover:opacity-75">
                 <a href="#" class="mt-6 block font-medium text-gray-900">
                   <span class="absolute inset-0 z-10" aria-hidden="true"></span>
                   New Arrivals
@@ -57,10 +57,10 @@
                 <p aria-hidden="true" class="mt-1">Shop now</p>
               </div>
               <div class="group relative text-sm">
-                <img src="https://tailwindui.com/plus/img/ecommerce-images/mega-menu-category-02.jpg" alt="Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees." class="aspect-square w-full rounded-lg bg-gray-100 object-cover group-hover:opacity-75">
+                <img src="/images/misc/navy-seal-challenge-coin.jpg" alt="Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees." class="aspect-square w-full rounded-lg bg-gray-100 object-cover group-hover:opacity-75">
                 <a href="#" class="mt-6 block font-medium text-gray-900">
                   <span class="absolute inset-0 z-10" aria-hidden="true"></span>
-                  Basic Tees
+                  Custom Design Gallery
                 </a>
                 <p aria-hidden="true" class="mt-1">Shop now</p>
               </div>
@@ -279,7 +279,7 @@
           <div class="ml-4 flex lg:ml-0">
             <a href="#">
               <span class="sr-only">Your Company</span>
-              <img class="h-8 w-auto" src="/us-army-coins-logo.png" alt="">
+              <img class="h-8 w-auto" src="/images/misc/us-army-coins-logo.png" alt="">
             </a>
           </div>
 
@@ -308,7 +308,7 @@
                       <div class="grid grid-cols-2 gap-x-8 gap-y-10 py-16">
                         <div class="col-start-2 grid grid-cols-2 gap-x-8">
                           <div class="group relative text-base sm:text-sm">
-                            <img src="/navy-coin-example.jpg" alt="Models sitting back to back, wearing Basic Tee in black and bone." class="aspect-square w-full rounded-lg bg-gray-100 object-cover group-hover:opacity-75">
+                            <img src="/images/misc/navy-coin-example.jpg" alt="Models sitting back to back, wearing Basic Tee in black and bone." class="aspect-square w-full rounded-lg bg-gray-100 object-cover group-hover:opacity-75">
                             <a href="#" class="mt-6 block font-medium text-gray-900">
                               <span class="absolute inset-0 z-10" aria-hidden="true"></span>
                               New Arrivals
@@ -316,7 +316,7 @@
                             <p aria-hidden="true" class="mt-1">Shop now</p>
                           </div>
                           <div class="group relative text-base sm:text-sm">
-                            <img src="/navy-seal-challenge-coin.jpg" alt="Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees." class="aspect-square w-full rounded-lg bg-gray-100 object-cover group-hover:opacity-75">
+                            <img src="/images/misc/navy-seal-challenge-coin.jpg" alt="Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees." class="aspect-square w-full rounded-lg bg-gray-100 object-cover group-hover:opacity-75">
                             <a href="#" class="mt-6 block font-medium text-gray-900">
                               <span class="absolute inset-0 z-10" aria-hidden="true"></span>
                               Custom Design Gallery

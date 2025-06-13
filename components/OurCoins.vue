@@ -41,42 +41,42 @@ export default {
         {
           name: 'Navy Coins',
           description: 'Elegant and durable challenge coins for the U.S. Navy, designed to honor service and achievements.',
-          image: '/branches/navy-coin-render.png'
+          image: '/images/coins/navy-coin-render.png'
         },
         {
           name: 'Army Coins',
           description: 'High-quality custom coins for the U.S. Army, perfect for recognition and unit pride.',
-          image: '/branches/army-coin-render.png'
+          image: '/images/coins/army-coin-render.png'
         },
         {
           name: 'Air Force Coins',
           description: 'Precision-crafted coins for the U.S. Air Force, celebrating excellence in the skies and beyond.',
-          image: '/branches/air-force-coin-render.png'
+          image: '/images/coins/air-force-coin-render.png'
         },
         {
           name: 'Marine Corps Coins',
           description: 'Custom coins that embody the honor, courage, and commitment of the U.S. Marine Corps.',
-          image: '/branches/marine-corps-coin-render.png'
+          image: '/images/coins/marine-corps-coin-render.png'
         },
         {
           name: 'Coast Guard Coins',
           description: 'Distinctive coins for the U.S. Coast Guard, symbolizing dedication to maritime safety and security.',
-          image: '/branches/coast-guard-coin-render.png'
+          image: '/images/coins/coast-guard-coin-render.png'
         },
         {
           name: 'Space Force Coins',
           description: 'Modern and innovative coins for the U.S. Space Force, representing the final frontier.',
-          image: '/branches/space-force-coin-render.png'
+          image: '/images/coins/space-force-coin-render.png'
         },
         {
           name: 'Commemorative Coins',
           description: 'Special edition coins for anniversaries, events, or to honor specific missions and individuals.',
-          image: '/branches/army-coin-render.png'
+          image: '/images/coins/army-coin-render.png'
         },
         {
           name: 'Custom Shape Coins',
           description: 'Unique, die-cut coins in any shape you can imagine, for a truly standout piece.',
-          image: '/branches/army-coin-render.png'
+          image: '/images/coins/army-coin-render.png'
         }
       ]
     }

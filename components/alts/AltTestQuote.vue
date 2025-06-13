@@ -288,12 +288,12 @@ const attachmentExpanded = ref(false)
 
 // Static data
 const thumbnails = [
-  '/branches/army-coin-render.png',
-  '/branches/navy-coin-render.png',
-  '/branches/air-force-coin-render.png',
-  '/branches/marine-corps-coin-render.png',
-  '/branches/coast-guard-coin-render.png',
-  '/branches/space-force-coin-render.png'
+  '/images/coins/army-coin-render.png',
+  '/images/coins/navy-coin-render.png',
+  '/images/coins/air-force-coin-render.png',
+  '/images/coins/marine-corps-coin-render.png',
+  '/images/coins/coast-guard-coin-render.png',
+  '/images/coins/space-force-coin-render.png'
 ]
 
 const tabs = ['Description', 'Artwork', 'Turnaround', 'Shipping', 'Returns']

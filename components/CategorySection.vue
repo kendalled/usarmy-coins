@@ -40,27 +40,27 @@
 const branches = [
   {
     name: 'US Army',
-    image: '/branches/army-coin-render.png',
+    image: '/images/coins/army-coin-render.png',
     link: '/army-challenge-coins'
   },
   {
     name: 'Navy',
-    image: '/branches/navy-coin-render.png',
+    image: '/images/coins/navy-coin-render.png',
     link: '/'
   },
   {
     name: 'Air Force',
-    image: '/branches/air-force-coin-render.png',
+    image: '/images/coins/air-force-coin-render.png',
     link: '/'
   },
   {
     name: 'Marine Corps',
-    image: '/branches/marine-corps-coin-render.png',
+    image: '/images/coins/marine-corps-coin-render.png',
     link: '/'
   },
   {
     name: 'Coast Guard',
-    image: '/branches/coast-guard-coin-render.png',
+    image: '/images/coins/coast-guard-coin-render.png',
     link: '/'
   }
 ]

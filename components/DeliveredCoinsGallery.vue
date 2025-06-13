@@ -62,27 +62,27 @@
 <script setup>
 const deliveredCoins = [
   {
-    image: "/delivered-coins/army-battalion-coin.jpg",
+    image: "/images/gallery/army-battalion-coin.jpg",
     description: "1st Battalion Challenge Coin"
   },
   {
-    image: "/delivered-coins/navy-seal-coin.jpg",
+    image: "/images/gallery/navy-seal-coin.jpg",
     description: "Navy SEAL Team Challenge Coin"
   },
   {
-    image: "/delivered-coins/airforce-squadron-coin.jpg",
+    image: "/images/gallery/airforce-squadron-coin.jpg",
     description: "Air Force Squadron Coin"
   },
   {
-    image: "/delivered-coins/marines-unit-coin.jpg",
+    image: "/images/gallery/marines-unit-coin.jpg",
     description: "Marine Corps Unit Coin"
   },
   {
-    image: "/delivered-coins/special-forces-coin.jpg",
+    image: "/images/gallery/special-forces-coin.jpg",
     description: "Special Forces Challenge Coin"
   },
   {
-    image: "/delivered-coins/coast-guard-coin.jpg",
+    image: "/images/gallery/coast-guard-coin.jpg",
     description: "Coast Guard Unit Coin"
   }
 ]
@@ -93,7 +93,7 @@ const testimonials = [
     name: "Michael R.",
     unit: "101st Airborne Division",
     branch: "Army",
-    branchIcon: "/branches/army-insignia.png",
+    branchIcon: "/images/branches/army-insignia.png",
     rating: 5,
     comment: "Outstanding quality and attention to detail. The coins exceeded our expectations and were delivered ahead of schedule. Perfect for our unit's recognition ceremony.",
     date: "March 15, 2024"
@@ -103,7 +103,7 @@ const testimonials = [
     name: "David S.",
     unit: "Naval Special Warfare",
     branch: "Navy",
-    branchIcon: "/branches/navy-insignia.png",
+    branchIcon: "/images/branches/navy-insignia.png",
     rating: 5,
     comment: "The craftsmanship is exceptional. These coins perfectly capture our team's spirit and heritage. The design team was incredibly responsive to our feedback.",
     date: "March 12, 2024"
@@ -113,7 +113,7 @@ const testimonials = [
     name: "Sarah T.",
     unit: "23rd Wing",
     branch: "Air Force",
-    branchIcon: "/branches/air-force-insignia.png",
+    branchIcon: "/images/branches/air-force-insignia.png",
     rating: 5,
     comment: "From design to delivery, the entire process was seamless. The coins are beautiful and our airmen are proud to carry them.",
     date: "March 8, 2024"
@@ -123,7 +123,7 @@ const testimonials = [
     name: "James B.",
     unit: "2nd Marine Division",
     branch: "Marine Corps",
-    branchIcon: "/branches/marine-corps-insignia.png",
+    branchIcon: "/images/branches/marine-corps-insignia.png",
     rating: 5,
     comment: "These coins honor our Marines' dedication and service. The quality is unmatched and the customer service was outstanding.",
     date: "March 5, 2024"

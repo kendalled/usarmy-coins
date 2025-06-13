@@ -15,10 +15,10 @@
       <div class="pt-16 lg:row-span-2 lg:-mr-16 xl:mr-auto">
         <div class="-mx-8 grid grid-cols-2 gap-4 sm:-mx-16 sm:grid-cols-4 lg:mx-0 lg:grid-cols-2 lg:gap-4 xl:gap-8">
           <div class="aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-slate-700 hover:scale-105 transform transition-all duration-300 ease-in-out hover:shadow-2xl hover:outline-orange-500/70">
-            <img alt="" src="/army-coin-on-stand.jpg" class="block size-full object-cover">
+            <img alt="" src="/images/misc/army-coin-on-stand.jpg" class="block size-full object-cover">
           </div>
           <div class="-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-slate-700 lg:-mt-40">
-            <img alt="" src="/army-coin-on-stand-2.jpg" class="block size-full object-cover">
+            <img alt="" src="/images/misc/army-coin-on-stand-2.jpg" class="block size-full object-cover">
           </div>
           <div class="aspect-square overflow-hidden rounded-xl shadow-xl outline outline-1 -outline-offset-1 outline-slate-700 hover:scale-105 transform transition-all duration-300 ease-in-out hover:shadow-2xl hover:outline-orange-500/70">
             <img alt="" src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?&auto=format&fit=crop&crop=left&w=560&h=560&q=90" class="block size-full object-cover">

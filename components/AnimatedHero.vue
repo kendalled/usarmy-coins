@@ -224,22 +224,22 @@ import { ref, onMounted, onBeforeUnmount } from 'vue'
 const showcaseCoins = [
   { 
     id: 1, 
-    image: '/branches/marine-corps-coin-render.png', 
+    image: '/images/coins/marine-corps-coin-render.png', 
     alt: 'Army Challenge Coin' 
   },
   { 
     id: 2, 
-    image: '/branches/air-force-coin-render.png', 
+    image: '/images/coins/air-force-coin-render.png', 
     alt: 'Air Force Challenge Coin' 
   },
   { 
     id: 3, 
-    image: '/branches/army-coin-render.png', 
+    image: '/images/coins/army-coin-render.png', 
     alt: 'Army Challenge Coin' 
   },
   { 
     id: 4, 
-    image: '/branches/navy-coin-render.png', 
+    image: '/images/coins/navy-coin-render.png', 
     alt: 'Navy Challenge Coin' 
   }
 ]

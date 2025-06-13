@@ -9,7 +9,7 @@
       <!-- Step 1-->
       <div class="flex p-px lg:col-span-2">
         <div class="overflow-hidden rounded-lg bg-gray-800 ring-1 ring-white/15 max-lg:rounded-t-[2rem] lg:rounded-tl-[2rem]">
-          <img class="h-80 object-cover object-left w-full" src="/step-1.webp" alt="">
+          <img class="h-80 object-cover object-left w-full" src="/images/misc/step-1.webp" alt="">
           <div class="p-10">
             <h3 class="text-sm/4 font-semibold text-gray-400">Releases</h3>
             <p class="mt-2 text-lg font-medium tracking-tight text-white">Push to deploy</p>
@@ -21,7 +21,7 @@
       <!-- Step 2 -->
       <div class="flex p-px lg:col-span-2">
         <div class="overflow-hidden rounded-lg bg-gray-800 ring-1 ring-white/15 max-lg:rounded-t-[2rem]">
-          <img class="h-80 object-cover object-left w-full" src="/step-2.webp" alt="">
+          <img class="h-80 object-cover object-left w-full" src="/images/misc/step-2.webp" alt="">
           <div class="p-10">
             <h3 class="text-sm/4 font-semibold text-gray-400">Releases</h3>
             <p class="mt-2 text-lg font-medium tracking-tight text-white">Push to deploy</p>
@@ -33,7 +33,7 @@
       <!-- Step 3 -->
       <div class="flex p-px lg:col-span-2">
         <div class="overflow-hidden rounded-lg bg-gray-800 ring-1 ring-white/15 lg:rounded-tr-[2rem]">
-          <img class="h-80 object-cover w-full" src="/step-3.webp" alt="">
+          <img class="h-80 object-cover w-full" src="/images/misc/step-3.webp" alt="">
           <div class="p-10">
             <h3 class="text-sm/4 font-semibold text-gray-400">Security</h3>
             <p class="mt-2 text-lg font-medium tracking-tight text-white">Advanced access control</p>

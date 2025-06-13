@@ -31,37 +31,37 @@ const cards = [
   {
     title: "Army Coins",
     description: "Award soldiers with valor and prestige.",
-    image: "/nav-marines.webp",
+    image: "/images/misc/nav-marines.webp",
   },
   {
     title: "Coast Guard Coins",
     description: "Recognize those who protect our national waters.",
-    image: "/nav-marines.webp",
+    image: "/images/misc/nav-marines.webp",
   },
   {
     title: "Navy Coins",
     description: "Honor sailors for courage and commitment.",
-    image: "/nav-marines.webp",
+    image: "/images/misc/nav-marines.webp",
   },
   {
     title: "Marine Coins",
     description: "Recognize incredible strength and courage.",
-    image: "/nav-marines.webp",
+    image: "/images/misc/nav-marines.webp",
   },
   {
     title: "Coast Guard Coins",
     description: "Recognize those who protect our national waters.",
-    image: "/nav-marines.webp",
+    image: "/images/misc/nav-marines.webp",
   },
   {
     title: "Navy Coins",
     description: "Honor sailors for courage and commitment.",
-    image: "/nav-marines.webp",
+    image: "/images/misc/nav-marines.webp",
   },
   {
     title: "Marine Coins",
     description: "Recognize incredible strength and courage.",
-    image: "/nav-marines.webp",
+    image: "/images/misc/nav-marines.webp",
   },
 ];
 </script>
