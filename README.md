@@ -1,75 +1,82 @@
-# Nuxt Minimal Starter
+# US Army Coins – Modern Nuxt Challenge Coin Site
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Welcome! This is a modern, developer-friendly Nuxt 3 project for a real-world e-commerce site specializing in custom military challenge coins, with a focus on the US Army and all branches. Built for speed, clarity, and a great user experience.
 
-## Setup
+---
 
-Make sure to install dependencies:
+## Summary 
+A full-featured, production-ready Nuxt 3 site for a business that designs and sells custom military challenge coins. Featuring:
+- A responsive UI (Tailwind CSS)
+- Dynamic quote builder with image-based options
+- Gallery of delivered coins & real testimonials
+- Trust-building UI (badges, stats, value stack)
+- Modern navigation, hero video, and more
+- Organized image assets and maintainable code
+
+---
+
+## 🛠️ Tech Stack
+- [Nuxt 3](https://nuxt.com/) (Vue 3, Vite)
+- [Tailwind CSS V4](https://tailwindcss.com/)
+- Modern file-based routing
+- Component-driven structure
+- I use nvim btw
+
+---
+
+## 🗂️ Project Structure 
+- `pages/` – Main routes (homepage, privacy, terms, etc.)
+- `components/` – All UI pieces (navbar, hero, quote builder, gallery, etc.)
+- `public/images/` – All images, organized by type (coins, plating, gallery, etc.)
+- `content/` – (If present) Markdown for SEO/content pages
+
+---
+
+## 🏁 Getting Started
+Clone the repo and install dependencies:
 
 ```bash
 # npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
+# or
 yarn install
-
-# bun
+# or
+pnpm install
+# or
 bun install
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
+Start the dev server:
 ```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
+# or
 yarn dev
-
-# bun
+# or
+pnpm dev
+# or
 bun run dev
 ```
 
-## Production
+Visit [http://localhost:3000](http://localhost:3000) to see the site.
 
-Build the application for production:
+---
 
+## 🏗️ Build & Preview
+Build for production:
 ```bash
-# npm
 npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
 ```
-
-Locally preview production build:
-
+Preview the production build:
 ```bash
-# npm
 npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+---
+
+## 📄 License
+MIT 
+
+---
+
+## ✉️ Questions?
+Open an issue or email info@usarmycoins.com
