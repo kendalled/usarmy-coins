@@ -1,4 +1,4 @@
-# US Army Coins – Modern Nuxt Challenge Coin Site
+# US Army Coins – Modern Challenge Coin Site
 
 Welcome! This is a modern, developer-friendly Nuxt 3 project for a real-world e-commerce site specializing in custom military challenge coins, with a focus on the US Army and all branches. Built for speed, clarity, and a great user experience.
 
