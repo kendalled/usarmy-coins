@@ -127,9 +127,6 @@
               <h2 class="text-lg font-medium text-white tracking-tight">Size & Quantity</h2>
               <div class="ml-auto text-slate-400 text-sm font-medium">
                 {{ selectedSize }}" | {{ formatQuantity(selectedQuantity) }} Qty
-                <span class="inline-block ml-1 text-slate-500">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block"><path d="m6 9 6 6 6-6"/></svg>
-                </span>
               </div>
             </div>
 
@@ -320,7 +317,10 @@
                 <div class="text-slate-500 text-xs mt-2">*Final price determined after artwork approval</div>
               </div>
 
-              <button class="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold py-3.5 px-6 rounded-lg transform transition-all duration-300 ease-in-out hover:-translate-y-0.5 flex items-center justify-center space-x-2 shadow-lg mb-6">
+              <button 
+                @click="openContactForm"
+                class="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold py-3.5 px-6 rounded-lg transform transition-all duration-300 ease-in-out hover:-translate-y-0.5 flex items-center justify-center space-x-2 shadow-lg mb-6"
+              >
                 <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
@@ -343,12 +343,30 @@
         <DeliveredCoinsGallery />
       </div>
     </div>
+
+    <!-- Contact Form Modal -->
+    <QuoteContactForm 
+      v-if="showContactForm"
+      :quote-data="quoteDataForSubmission"
+      @close="closeContactForm"
+      @submitted="handleQuoteSubmitted"
+    />
+
+    <!-- Success Modal -->
+    <QuoteSuccessModal
+      v-if="showSuccessModal"
+      :submitted-data="submittedQuoteData"
+      @close="closeSuccessModal"
+      @new-quote="handleNewQuote"
+    />
   </div>
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, watch } from 'vue'
 import DeliveredCoinsGallery from './DeliveredCoinsGallery.vue'
+import QuoteContactForm from './QuoteContactForm.vue'
+import QuoteSuccessModal from './QuoteSuccessModal.vue'
 
 // Props
 const props = defineProps({
@@ -375,6 +393,11 @@ const selectedPlating = ref('Antique Gold')
 const selectedPackaging = ref('Poly Bag')
 const platingExpanded = ref(false)
 const packagingExpanded = ref(false)
+
+// Modal states
+const showContactForm = ref(false)
+const showSuccessModal = ref(false)
+const submittedQuoteData = ref(null)
 
 // Static data
 const thumbnails = computed(() => [
@@ -598,6 +621,53 @@ const estimatedTotal = computed(() => {
 const getPricePerUnit = (quantity) => {
   if (!selectedSize.value) return null
   return pricingMatrix[selectedSize.value]?.[quantity]?.toFixed(2)
+}
+
+// Quote data for submission
+const quoteDataForSubmission = computed(() => ({
+  size: selectedSize.value,
+  quantity: selectedQuantity.value,
+  plating: selectedPlating.value,
+  packaging: selectedPackaging.value,
+  estimatedTotal: estimatedTotal.value,
+  retailPrice: retailPrice.value,
+  savings: savings.value,
+  pageTitle: props.pageTitle
+}))
+
+// Modal methods
+const openContactForm = () => {
+  showContactForm.value = true
+}
+
+const closeContactForm = () => {
+  showContactForm.value = false
+}
+
+const handleQuoteSubmitted = (data) => {
+  submittedQuoteData.value = data
+  showContactForm.value = false
+  showSuccessModal.value = true
+}
+
+const closeSuccessModal = () => {
+  showSuccessModal.value = false
+  submittedQuoteData.value = null
+}
+
+const handleNewQuote = () => {
+  // Reset all selections to defaults
+  selectedImage.value = 0
+  activeTab.value = 'Description'
+  selectedSize.value = '1.75'
+  selectedQuantity.value = 100
+  selectedPlating.value = 'Antique Gold'
+  selectedPackaging.value = 'Poly Bag'
+  platingExpanded.value = false
+  packagingExpanded.value = false
+  
+  // Close modal
+  closeSuccessModal()
 }
 
 // Client-side only code
