@@ -23,7 +23,7 @@
     <section aria-labelledby="social-impact-heading" class="mx-auto max-w-7xl px-4 pt-24 sm:px-6 sm:pt-32 lg:px-8">
       <div class="relative overflow-hidden rounded-lg">
         <div class="absolute inset-0">
-          <img src="/challenge-coin-collection.jpg" alt="" class="size-full object-cover">
+          <img src="/images/misc/challenge-coin-collection.jpg" alt="" class="size-full object-cover">
         </div>
         <div class="relative bg-gray-900/75 px-6 py-32 sm:px-12 sm:py-40 lg:px-16">
           <div class="relative mx-auto flex max-w-3xl flex-col items-center text-center">
@@ -32,7 +32,7 @@
               <span class="block sm:inline"> for every branch</span>
             </h2>
             <p class="mt-3 text-xl text-white">Since 1999, we have produced custom coins for our first responders, soldiers, and countless others. From complimentary art proofs to industry-leading pricing, you know you are making the right choice when you order with us.</p>
-            <a href="#" class="mt-8 block w-full rounded-md border border-transparent bg-white px-8 py-3 text-base font-medium text-gray-900 hover:bg-gray-100 sm:w-auto">Shop Designs</a>
+            <a href="/" class="mt-8 block w-full rounded-md border border-transparent bg-white px-8 py-3 text-base font-medium text-gray-900 hover:bg-gray-100 sm:w-auto">Shop Designs</a>
           </div>
         </div>
       </div>
@@ -44,18 +44,18 @@
       <p class="mt-4 text-base text-gray-500">Each season, we collaborate with world-class designers to create a collection inspired by the natural world.</p>
 
       <div class="mt-10 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-8 lg:space-y-0">
-        <a href="#" class="group block">
-          <img src="https://tailwindui.com/plus/img/ecommerce-images/home-page-01-collection-01.jpg" alt="Brown leather key ring with brass metal loops and rivets on wood table." class="aspect-[3/2] w-full rounded-lg object-cover group-hover:opacity-75 lg:aspect-[5/6]">
+        <a href="/" class="group block">
+          <img src="/tests/test_1.jpeg" alt="Brown leather key ring with brass metal loops and rivets on wood table." class="aspect-[3/2] w-full rounded-lg object-cover group-hover:opacity-75 lg:aspect-[5/6]">
           <h3 class="mt-4 text-base font-semibold text-gray-900">Handcrafted Collection</h3>
           <p class="mt-2 text-sm text-gray-500">Keep your phone, keys, and wallet together, so you can lose everything at once.</p>
         </a>
-        <a href="#" class="group block">
-          <img src="https://tailwindui.com/plus/img/ecommerce-images/home-page-01-collection-02.jpg" alt="Natural leather mouse pad on white desk next to porcelain mug and keyboard." class="aspect-[3/2] w-full rounded-lg object-cover group-hover:opacity-75 lg:aspect-[5/6]">
+        <a href="/" class="group block">
+          <img src="/tests/test_2.jpeg" alt="Natural leather mouse pad on white desk next to porcelain mug and keyboard." class="aspect-[3/2] w-full rounded-lg object-cover group-hover:opacity-75 lg:aspect-[5/6]">
           <h3 class="mt-4 text-base font-semibold text-gray-900">Organized Desk Collection</h3>
           <p class="mt-2 text-sm text-gray-500">The rest of the house will still be a mess, but your desk will look great.</p>
         </a>
-        <a href="#" class="group block">
-          <img src="https://tailwindui.com/plus/img/ecommerce-images/home-page-01-collection-03.jpg" alt="Person placing task list card into walnut card holder next to felt carrying case on leather desk pad." class="aspect-[3/2] w-full rounded-lg object-cover group-hover:opacity-75 lg:aspect-[5/6]">
+        <a href="/" class="group block">
+          <img src="/tests/test_3.jpeg" alt="Person placing task list card into walnut card holder next to felt carrying case on leather desk pad." class="aspect-[3/2] w-full rounded-lg object-cover group-hover:opacity-75 lg:aspect-[5/6]">
           <h3 class="mt-4 text-base font-semibold text-gray-900">Focus Collection</h3>
           <p class="mt-2 text-sm text-gray-500">Be more productive than enterprise project managers with a single piece of paper.</p>
         </a>
@@ -66,18 +66,20 @@
     <section aria-labelledby="comfort-heading" class="mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
       <div class="relative overflow-hidden rounded-lg">
         <div class="absolute inset-0">
-          <img src="https://tailwindui.com/plus/img/ecommerce-images/home-page-01-feature-section-02.jpg" alt="" class="size-full object-cover">
+          <img src="/images/misc/army-coin-on-stand.jpg" alt="" class="size-full object-cover">
         </div>
         <div class="relative bg-gray-900/75 px-6 py-32 sm:px-12 sm:py-40 lg:px-16">
           <div class="relative mx-auto flex max-w-3xl flex-col items-center text-center">
             <h2 id="comfort-heading" class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Simple productivity</h2>
             <p class="mt-3 text-xl text-white">Endless tasks, limited hours, a single piece of paper. Not really a haiku, but we're doing our best here. No kanban boards, burndown charts, or tangled flowcharts with our Focus system. Just the undeniable urge to fill empty circles.</p>
-            <a href="#" class="mt-8 block w-full rounded-md border border-transparent bg-white px-8 py-3 text-base font-medium text-gray-900 hover:bg-gray-100 sm:w-auto">Shop Focus</a>
+            <a href="/" class="mt-8 block w-full rounded-md border border-transparent bg-white px-8 py-3 text-base font-medium text-gray-900 hover:bg-gray-100 sm:w-auto">Shop Focus</a>
           </div>
         </div>
       </div>
     </section>
   </main>
+
+  <SiteFooter />
 
   <footer aria-labelledby="footer-heading" class="bg-gray-900">
     <h2 id="footer-heading" class="sr-only">Footer</h2>
@@ -89,19 +91,19 @@
               <h3 class="text-sm font-medium text-white">Shop</h3>
               <ul role="list" class="mt-6 space-y-6">
                 <li class="text-sm">
-                  <a href="#" class="text-gray-300 hover:text-white">Bags</a>
+                  <a href="/" class="text-gray-300 hover:text-white">Bags</a>
                 </li>
                 <li class="text-sm">
-                  <a href="#" class="text-gray-300 hover:text-white">Tees</a>
+                  <a href="/" class="text-gray-300 hover:text-white">Tees</a>
                 </li>
                 <li class="text-sm">
-                  <a href="#" class="text-gray-300 hover:text-white">Objects</a>
+                  <a href="/" class="text-gray-300 hover:text-white">Objects</a>
                 </li>
                 <li class="text-sm">
-                  <a href="#" class="text-gray-300 hover:text-white">Home Goods</a>
+                  <a href="/" class="text-gray-300 hover:text-white">Home Goods</a>
                 </li>
                 <li class="text-sm">
-                  <a href="#" class="text-gray-300 hover:text-white">Accessories</a>
+                  <a href="/" class="text-gray-300 hover:text-white">Accessories</a>
                 </li>
               </ul>
             </div>
@@ -109,22 +111,22 @@
               <h3 class="text-sm font-medium text-white">Company</h3>
               <ul role="list" class="mt-6 space-y-6">
                 <li class="text-sm">
-                  <a href="#" class="text-gray-300 hover:text-white">Who we are</a>
+                  <a href="/" class="text-gray-300 hover:text-white">Who we are</a>
                 </li>
                 <li class="text-sm">
-                  <a href="#" class="text-gray-300 hover:text-white">Sustainability</a>
+                  <a href="/" class="text-gray-300 hover:text-white">Sustainability</a>
                 </li>
                 <li class="text-sm">
-                  <a href="#" class="text-gray-300 hover:text-white">Press</a>
+                  <a href="/" class="text-gray-300 hover:text-white">Press</a>
                 </li>
                 <li class="text-sm">
-                  <a href="#" class="text-gray-300 hover:text-white">Careers</a>
+                  <a href="/" class="text-gray-300 hover:text-white">Careers</a>
                 </li>
                 <li class="text-sm">
-                  <a href="#" class="text-gray-300 hover:text-white">Terms &amp; Conditions</a>
+                  <a href="/TermsOfService" class="text-gray-300 hover:text-white">Terms &amp; Conditions</a>
                 </li>
                 <li class="text-sm">
-                  <a href="#" class="text-gray-300 hover:text-white">Privacy</a>
+                  <a href="/PrivacyPolicy" class="text-gray-300 hover:text-white">Privacy</a>
                 </li>
               </ul>
             </div>
@@ -134,13 +136,13 @@
               <h3 class="text-sm font-medium text-white">Account</h3>
               <ul role="list" class="mt-6 space-y-6">
                 <li class="text-sm">
-                  <a href="#" class="text-gray-300 hover:text-white">Manage Account</a>
+                  <a href="/" class="text-gray-300 hover:text-white">Manage Account</a>
                 </li>
                 <li class="text-sm">
-                  <a href="#" class="text-gray-300 hover:text-white">Returns &amp; Exchanges</a>
+                  <a href="/" class="text-gray-300 hover:text-white">Returns &amp; Exchanges</a>
                 </li>
                 <li class="text-sm">
-                  <a href="#" class="text-gray-300 hover:text-white">Redeem a Gift Card</a>
+                  <a href="/" class="text-gray-300 hover:text-white">Redeem a Gift Card</a>
                 </li>
               </ul>
             </div>
@@ -148,16 +150,16 @@
               <h3 class="text-sm font-medium text-white">Connect</h3>
               <ul role="list" class="mt-6 space-y-6">
                 <li class="text-sm">
-                  <a href="#" class="text-gray-300 hover:text-white">Contact Us</a>
+                  <a href="/" class="text-gray-300 hover:text-white">Contact Us</a>
                 </li>
                 <li class="text-sm">
-                  <a href="#" class="text-gray-300 hover:text-white">Facebook</a>
+                  <a href="/" class="text-gray-300 hover:text-white">Facebook</a>
                 </li>
                 <li class="text-sm">
-                  <a href="#" class="text-gray-300 hover:text-white">Instagram</a>
+                  <a href="/" class="text-gray-300 hover:text-white">Instagram</a>
                 </li>
                 <li class="text-sm">
-                  <a href="#" class="text-gray-300 hover:text-white">Pinterest</a>
+                  <a href="/" class="text-gray-300 hover:text-white">Pinterest</a>
                 </li>
               </ul>
             </div>

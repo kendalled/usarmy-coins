@@ -1,18 +1,18 @@
 <template>
   <div class="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-amber-900/30 pt-32 pb-32">
     <!-- Trust Bar -->
-    <div class="fixed top-[72px] -mt-1 left-0 right-0 bg-gradient-to-r from-slate-800/95 via-slate-800/95 to-slate-800/95 backdrop-blur-sm z-40 border-b border-orange-500/10">
+    <div class="-mt-1 fixed top-[72px] left-0 right-0 bg-black/10 backdrop-blur-sm z-40 border-b border-slate-800/60 shadow-md transition-all duration-300">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[84rem] py-2">
         <div class="flex items-center justify-between">
           <!-- Trust Metrics -->
           <div class="flex items-center space-x-6 text-sm">
-            <div class="flex items-center text-slate-300">
+            <div class="flex items-center text-slate-200">
               <svg class="w-4 h-4 text-orange-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               <span><span class="font-semibold text-white">{{ orderCount }}</span> orders this month</span>
             </div>
-            <div class="hidden sm:flex items-center text-slate-300">
+            <div class="hidden sm:flex items-center text-slate-200">
               <svg class="w-4 h-4 text-orange-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
               </svg>
@@ -21,7 +21,7 @@
           </div>
           
           <!-- Live Order Alert -->
-          <div v-if="latestOrder" class="hidden md:block animate-fade-in-out text-sm text-slate-300">
+          <div v-if="latestOrder" class="hidden md:block animate-fade-in-out text-sm text-slate-200">
             <span class="inline-flex items-center">
               <span class="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
               {{ latestOrder }}
@@ -32,7 +32,7 @@
           <div class="text-sm">
             <span class="text-orange-400">Order in next </span>
             <span class="font-mono text-white">{{ productionTimer }}</span>
-            <span class="text-slate-300"> for delivery by {{ deliveryDate }}</span>
+            <span class="text-slate-200"> for delivery by {{ deliveryDate }}</span>
           </div>
         </div>
       </div>
@@ -41,7 +41,7 @@
     <!-- Breadcrumb -->
     <nav aria-label="Breadcrumb" class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[84rem] py-3">
       <div class="flex items-center space-x-2 text-sm">
-        <a href="#" class="text-orange-500 hover:text-orange-400 font-medium">Challenge Coins</a>
+        <a href="/#our-coins" class="text-orange-500 hover:text-orange-400 font-medium">Challenge Coins</a>
         <svg class="h-4 w-4 text-gray-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
         </svg>
@@ -248,19 +248,19 @@
             </div>
           </div>
 
-          <!-- Step 3: Attachment -->
+          <!-- Step 3: Packaging -->
           <div class="bg-slate-800/80 backdrop-blur-sm rounded-xl p-6 shadow-xl ring-1 ring-white/5">
             <button 
-              @click="attachmentExpanded = !attachmentExpanded"
+              @click="packagingExpanded = !packagingExpanded"
               class="flex items-center justify-between w-full"
             >
               <div class="flex items-center space-x-4">
                 <div class="w-8 h-8 bg-slate-700 rounded-full flex items-center justify-center text-white font-semibold text-sm shadow-lg">3</div>
-                <h3 class="text-lg font-medium text-white">Attachment</h3>
+                <h3 class="text-lg font-medium text-white">Packaging</h3>
               </div>
               <svg 
                 class="h-5 w-5 text-slate-400 transition-transform duration-200"
-                :class="{ 'rotate-180': attachmentExpanded }"
+                :class="{ 'rotate-180': packagingExpanded }"
                 fill="none" 
                 viewBox="0 0 24 24" 
                 stroke="currentColor"
@@ -269,31 +269,35 @@
               </svg>
             </button>
             
-            <div v-if="attachmentExpanded" class="mt-6">
-              <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            <div v-if="packagingExpanded" class="mt-6">
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
                 <label 
-                  v-for="attachment in attachmentOptions" 
-                  :key="attachment"
+                  v-for="option in packagingOptions" 
+                  :key="option.name"
                   class="relative cursor-pointer group"
                 >
                   <input 
                     type="radio" 
-                    :value="attachment" 
-                    v-model="selectedAttachment"
+                    :value="option.name" 
+                    v-model="selectedPackaging"
                     class="sr-only peer"
                   >
-                  <div class="aspect-square rounded-xl p-4 bg-slate-700/50 ring-1 ring-white/5 hover:bg-slate-700/70 transition-all duration-200 overflow-hidden peer-checked:ring-2 peer-checked:ring-orange-500 peer-checked:bg-slate-700">
+                  <div class="aspect-square rounded-xl p-4 bg-slate-700/50 ring-1 ring-white/5 hover:bg-slate-700/70 transition-all duration-200 overflow-hidden peer-checked:ring-2 peer-checked:ring-orange-500 peer-checked:bg-slate-700 flex flex-col items-center">
+                    <!-- Price badge -->
+                    <span class="absolute top-2 left-2 bg-slate-100 text-slate-700 text-xs font-semibold px-2 py-0.5 rounded-full shadow">
+                      {{ option.price === 0 ? 'Free' : `$${option.price.toFixed(2)}` }}
+                    </span>
                     <!-- Image container -->
-                    <div class="w-full h-3/4 mb-3 rounded-lg bg-slate-800/50 overflow-hidden">
+                    <div class="w-full h-24 mb-3 rounded-lg bg-slate-800/50 overflow-hidden flex items-center justify-center">
                       <img 
-                        :src="`/attachments/${attachment.toLowerCase().replace(' ', '-')}.jpg`" 
-                        :alt="attachment"
-                        class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
+                        :src="option.image" 
+                        :alt="option.name"
+                        class="max-h-full max-w-full object-contain"
                       >
                     </div>
                     <!-- Label -->
                     <div class="text-sm font-medium text-slate-200 group-hover:text-orange-400 transition-colors text-center">
-                      {{ attachment }}
+                      {{ option.name }}
                     </div>
                     <!-- Selected indicator -->
                     <div class="absolute top-2 right-2 w-4 h-4 rounded-full bg-orange-500 transform scale-0 peer-checked:scale-100 transition-transform duration-200"></div>
@@ -352,9 +356,9 @@ const activeTab = ref('Description')
 const selectedSize = ref('1.75')
 const selectedQuantity = ref(100)
 const selectedPlating = ref('Antique Gold')
-const selectedAttachment = ref('Military Clutch')
+const selectedPackaging = ref('Poly Bag')
 const platingExpanded = ref(false)
-const attachmentExpanded = ref(false)
+const packagingExpanded = ref(false)
 
 // Static data
 const thumbnails = [
@@ -406,12 +410,27 @@ const platingOptions = [
   }
 ]
 
-const attachmentOptions = [
-  'Military Clutch',
-  'Butterfly Clutch',
-  'Safety Pin',
-  'Magnetic Back',
-  'No Attachment'
+const packagingOptions = [
+  {
+    name: 'Poly Bag',
+    image: '/packaging/poly-bag.jpg',
+    price: 0
+  },
+  {
+    name: 'Acrylic Case',
+    image: '/packaging/acrylic-case.jpg',
+    price: 1.00
+  },
+  {
+    name: 'Velvet Bag',
+    image: '/packaging/velvet-bag.jpg',
+    price: 0.60
+  },
+  {
+    name: 'Velvet Case',
+    image: '/packaging/velvet-case.jpg',
+    price: 4.00
+  }
 ]
 
 // Pricing matrix based on size and quantity
@@ -574,9 +593,9 @@ const persistSelections = () => {
       selectedSize: selectedSize.value,
       selectedQuantity: selectedQuantity.value,
       selectedPlating: selectedPlating.value,
-      selectedAttachment: selectedAttachment.value,
+      selectedPackaging: selectedPackaging.value,
       platingExpanded: platingExpanded.value,
-      attachmentExpanded: attachmentExpanded.value
+      packagingExpanded: packagingExpanded.value
     }
     localStorage.setItem('coinSelections', JSON.stringify(selections))
   }
@@ -594,9 +613,9 @@ onMounted(() => {
         selectedSize.value = selections.selectedSize
         selectedQuantity.value = selections.selectedQuantity
         selectedPlating.value = selections.selectedPlating
-        selectedAttachment.value = selections.selectedAttachment
+        selectedPackaging.value = selections.selectedPackaging
         platingExpanded.value = selections.platingExpanded
-        attachmentExpanded.value = selections.attachmentExpanded
+        packagingExpanded.value = selections.packagingExpanded
       }
     } catch (e) {
       console.error('Error loading saved selections:', e)
@@ -612,9 +631,9 @@ watch(
     selectedSize,
     selectedQuantity,
     selectedPlating,
-    selectedAttachment,
+    selectedPackaging,
     platingExpanded,
-    attachmentExpanded
+    packagingExpanded
   ],
   () => persistSelections(),
   { deep: true }

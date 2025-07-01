@@ -33,8 +33,8 @@
              class="bg-slate-700/30 rounded-lg p-6 ring-1 ring-white/5 hover:bg-slate-700/50 transition-colors duration-300">
           <div class="flex flex-col items-center text-center mb-4">
             <!-- Military Branch Icon -->
-            <div class="w-16 h-16 rounded-full bg-slate-600/50 p-3 mb-4 ring-2 ring-orange-500/20">
-              <img :src="testimonial.branchIcon" :alt="testimonial.branch" class="w-full h-full object-contain">
+            <div class="w-16 h-16 rounded-full bg-slate-600/50 mb-4 ring-2 ring-orange-500/20">
+              <img :src="testimonial.image" :alt="testimonial.name" class="w-full h-full object-cover rounded-full">
             </div>
             
             <div>
@@ -62,28 +62,28 @@
 <script setup>
 const deliveredCoins = [
   {
-    image: "/images/gallery/army-battalion-coin.jpg",
-    description: "1st Battalion Challenge Coin"
+    image: "/tests/test_1.jpeg",
+    description: "Military Challenge Coin 1"
   },
   {
-    image: "/images/gallery/navy-seal-coin.jpg",
-    description: "Navy SEAL Team Challenge Coin"
+    image: "/tests/test_2.jpeg",
+    description: "Military Challenge Coin 2"
   },
   {
-    image: "/images/gallery/airforce-squadron-coin.jpg",
-    description: "Air Force Squadron Coin"
+    image: "/tests/test_3.jpeg",
+    description: "Military Challenge Coin 3"
   },
   {
-    image: "/images/gallery/marines-unit-coin.jpg",
-    description: "Marine Corps Unit Coin"
+    image: "/tests/test_4.jpeg",
+    description: "Military Challenge Coin 4"
   },
   {
-    image: "/images/gallery/special-forces-coin.jpg",
-    description: "Special Forces Challenge Coin"
+    image: "/tests/test_1.jpeg",
+    description: "Military Challenge Coin 5"
   },
   {
-    image: "/images/gallery/coast-guard-coin.jpg",
-    description: "Coast Guard Unit Coin"
+    image: "/tests/test_2.jpeg",
+    description: "Military Challenge Coin 6"
   }
 ]
 
@@ -93,7 +93,7 @@ const testimonials = [
     name: "Michael R.",
     unit: "101st Airborne Division",
     branch: "Army",
-    branchIcon: "/images/branches/army-insignia.png",
+    image: "/tests/test_1.jpeg",
     rating: 5,
     comment: "Outstanding quality and attention to detail. The coins exceeded our expectations and were delivered ahead of schedule. Perfect for our unit's recognition ceremony.",
     date: "March 15, 2024"
@@ -103,7 +103,7 @@ const testimonials = [
     name: "David S.",
     unit: "Naval Special Warfare",
     branch: "Navy",
-    branchIcon: "/images/branches/navy-insignia.png",
+    image: "/tests/test_2.jpeg",
     rating: 5,
     comment: "The craftsmanship is exceptional. These coins perfectly capture our team's spirit and heritage. The design team was incredibly responsive to our feedback.",
     date: "March 12, 2024"
@@ -113,7 +113,7 @@ const testimonials = [
     name: "Sarah T.",
     unit: "23rd Wing",
     branch: "Air Force",
-    branchIcon: "/images/branches/air-force-insignia.png",
+    image: "/tests/test_3.jpeg",
     rating: 5,
     comment: "From design to delivery, the entire process was seamless. The coins are beautiful and our airmen are proud to carry them.",
     date: "March 8, 2024"
@@ -123,7 +123,7 @@ const testimonials = [
     name: "James B.",
     unit: "2nd Marine Division",
     branch: "Marine Corps",
-    branchIcon: "/images/branches/marine-corps-insignia.png",
+    image: "/tests/test_4.jpeg",
     rating: 5,
     comment: "These coins honor our Marines' dedication and service. The quality is unmatched and the customer service was outstanding.",
     date: "March 5, 2024"
