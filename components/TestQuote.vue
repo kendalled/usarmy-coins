@@ -45,14 +45,14 @@
         <svg class="h-4 w-4 text-gray-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
         </svg>
-        <span class="text-gray-400 font-medium">Military Challenge Coins</span>
+        <span class="text-gray-400 font-medium">{{ props.breadcrumbText }}</span>
       </div>
     </nav>
 
     <!-- Main Content -->
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[84rem]">
       <!-- Page Title -->
-      <h1 class="text-3xl sm:text-4xl font-bold text-white text-center mb-16">Military Challenge Coins</h1>
+      <h1 class="text-3xl sm:text-4xl font-bold text-white text-center mb-16">{{ props.pageTitle }}</h1>
 
       <div class="grid grid-cols-1 lg:grid-cols-9 gap-8 lg:gap-12">
         <!-- Left Column -->
@@ -61,7 +61,7 @@
           <div class="bg-gradient-to-br from-slate-800 via-slate-800 to-slate-900 rounded-2xl p-8 aspect-square flex items-center justify-center shadow-xl ring-1 ring-white/5">
             <img 
               :src="thumbnails[selectedImage]" 
-              alt="Military Challenge Coin"
+              :alt="props.pageTitle"
               class="max-w-full max-h-full object-contain drop-shadow-2xl transition-transform duration-300 hover:scale-105"
             >
           </div>
@@ -350,6 +350,22 @@
 import { ref, computed, onMounted } from 'vue'
 import DeliveredCoinsGallery from './DeliveredCoinsGallery.vue'
 
+// Props
+const props = defineProps({
+  pageTitle: {
+    type: String,
+    default: 'Military Challenge Coins'
+  },
+  breadcrumbText: {
+    type: String,
+    default: 'Military Challenge Coins'
+  },
+  primaryImage: {
+    type: String,
+    default: '/images/coins/army-coin-render.png'
+  }
+})
+
 // Reactive data
 const selectedImage = ref(0)
 const activeTab = ref('Description')
@@ -361,14 +377,14 @@ const platingExpanded = ref(false)
 const packagingExpanded = ref(false)
 
 // Static data
-const thumbnails = [
-  '/images/coins/army-coin-render.png',
+const thumbnails = computed(() => [
+  props.primaryImage,
   '/images/coins/navy-coin-render.png',
   '/images/coins/air-force-coin-render.png',
   '/images/coins/marine-corps-coin-render.png',
   '/images/coins/coast-guard-coin-render.png',
   '/images/coins/space-force-coin-render.png'
-]
+])
 
 const tabs = ['Description', 'Artwork', 'Turnaround', 'Shipping']
 

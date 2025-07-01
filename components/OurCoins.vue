@@ -7,7 +7,7 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-10">
         <a v-for="(coin, index) in coinTypes" :key="index" 
-           href="#get-a-quote"
+           :href="coin.route"
            class="group block bg-slate-800 rounded-xl p-6 shadow-lg hover:shadow-xl hover:shadow-orange-600/10 transform hover:-translate-y-1 transition-all duration-200 ease-in-out flex flex-col items-center text-center h-full hover:ring-1 hover:ring-orange-500/30">
           <div class="relative mb-6 w-40 h-40 md:w-48 md:h-48">
             <img :src="coin.image" :alt="coin.name" 
@@ -41,42 +41,50 @@ export default {
         {
           name: 'Navy Coins',
           description: 'Elegant and durable challenge coins for the U.S. Navy, designed to honor service and achievements.',
-          image: '/images/coins/navy-coin-render.png'
+          image: '/images/coins/navy-coin-render.png',
+          route: '/navy-challenge-coins'
         },
         {
           name: 'Army Coins',
           description: 'High-quality custom coins for the U.S. Army, perfect for recognition and unit pride.',
-          image: '/images/coins/army-coin-render.png'
+          image: '/images/coins/army-coin-render.png',
+          route: '/army-challenge-coins'
         },
         {
           name: 'Air Force Coins',
           description: 'Precision-crafted coins for the U.S. Air Force, celebrating excellence in the skies and beyond.',
-          image: '/images/coins/air-force-coin-render.png'
+          image: '/images/coins/air-force-coin-render.png',
+          route: '/air-force-challenge-coins'
         },
         {
           name: 'Marine Corps Coins',
           description: 'Custom coins that embody the honor, courage, and commitment of the U.S. Marine Corps.',
-          image: '/images/coins/marine-corps-coin-render.png'
+          image: '/images/coins/marine-corps-coin-render.png',
+          route: '/marine-corps-challenge-coins'
         },
         {
           name: 'Coast Guard Coins',
           description: 'Distinctive coins for the U.S. Coast Guard, symbolizing dedication to maritime safety and security.',
-          image: '/images/coins/coast-guard-coin-render.png'
+          image: '/images/coins/coast-guard-coin-render.png',
+          route: '/coast-guard-challenge-coins'
         },
         {
           name: 'Space Force Coins',
           description: 'Modern and innovative coins for the U.S. Space Force, representing the final frontier.',
-          image: '/images/coins/space-force-coin-render.png'
+          image: '/images/coins/space-force-coin-render.png',
+          route: '/space-force-challenge-coins'
         },
         {
           name: 'Commemorative Coins',
           description: 'Special edition coins for anniversaries, events, or to honor specific missions and individuals.',
-          image: '/images/coins/army-coin-render.png'
+          image: '/images/coins/army-coin-render.png',
+          route: '/commemorative-challenge-coins'
         },
         {
           name: 'Custom Shape Coins',
           description: 'Unique, die-cut coins in any shape you can imagine, for a truly standout piece.',
-          image: '/images/coins/army-coin-render.png'
+          image: '/images/coins/army-coin-render.png',
+          route: '/custom-shape-challenge-coins'
         }
       ]
     }
