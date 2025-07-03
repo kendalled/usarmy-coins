@@ -39,13 +39,24 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, computed } from 'vue'
 
 // Trust metrics
 const orderCount = ref(847)
 const latestOrder = ref(null)
 const productionTimer = ref('23:45:12')
-const deliveryDate = ref('May 15')
+// Calculate delivery date (2 weeks from current date)
+const deliveryDate = computed(() => {
+  const now = new Date()
+  const deliveryDate = new Date(now.getTime() + (14 * 24 * 60 * 60 * 1000)) // Add 14 days in milliseconds
+  
+  // Format as "Month DD" (e.g., "May 15")
+  const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+  const month = monthNames[deliveryDate.getMonth()]
+  const day = deliveryDate.getDate()
+  
+  return `${month} ${day}`
+})
 
 // Simulated latest orders
 const recentOrders = [
