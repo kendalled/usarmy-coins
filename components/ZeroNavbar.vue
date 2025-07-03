@@ -1,6 +1,11 @@
 <template>
-  <header class="fixed top-0 left-0 w-full bg-black/10 backdrop-blur-sm z-50 transition-all duration-300" :class="{ 'bg-black/30': scrolled }">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 max-w-[84rem]">
+  <header class="fixed top-0 left-0 w-full z-50">
+    <!-- Glass Background covering both navbar and trustbar -->
+    <div class="absolute inset-0 bg-black/10 backdrop-blur-md transition-all duration-300 border-b border-slate-700/50 h-[110px]" :class="{ 'bg-black/30': scrolled }"></div>
+    
+    <!-- Navbar Content -->
+    <div class="relative z-10">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 max-w-[84rem]">
       <div class="flex items-center justify-between">
         <!-- Logo -->
         <div class="flex items-center">
@@ -21,7 +26,7 @@
           <a href="#" class="text-white hover:text-orange-500 transition-colors duration-300 text-sm font-semibold">Units & Departments</a>
           <a href="#" class="text-white hover:text-orange-500 transition-colors duration-300 text-sm font-semibold">Products</a>
           <a href="#" class="text-white hover:text-orange-500 transition-colors duration-300 text-sm font-semibold">Blog</a>
-          <a href="#" class="text-white hover:text-orange-500 transition-colors duration-300 text-sm font-semibold">Gallery</a>
+          <NuxtLink to="/gallery" class="text-white hover:text-orange-500 transition-colors duration-300 text-sm font-semibold">Gallery</NuxtLink>
         </nav>
         
         <!-- Right Side Buttons -->
@@ -52,7 +57,7 @@
           <a href="#" class="text-white hover:text-orange-500 transition-colors duration-300 py-2">Units & Departments</a>
           <a href="#" class="text-white hover:text-orange-500 transition-colors duration-300 py-2">Products</a>
           <a href="#" class="text-white hover:text-orange-500 transition-colors duration-300 py-2">Blog</a>
-          <a href="#" class="text-white hover:text-orange-500 transition-colors duration-300 py-2">Gallery</a>
+          <NuxtLink to="/gallery" class="text-white hover:text-orange-500 transition-colors duration-300 py-2">Gallery</NuxtLink>
           <div class="pt-2 border-t border-gray-800 flex flex-col space-y-3">
             <a href="#" class="text-white hover:text-orange-500 transition-colors duration-300 py-2">Sign in</a>
             <a href="#" class="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold py-3 px-4 rounded-md transform transition-all duration-300 ease-in-out hover:-translate-y-0.5 text-center">
@@ -61,12 +66,16 @@
           </div>
         </nav>
       </div>
+      </div>
     </div>
+    
+    <TrustBar />
   </header>
 </template>
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import TrustBar from './TrustBar.vue'
 
 const mobileMenuOpen = ref(false)
 const scrolled = ref(false)

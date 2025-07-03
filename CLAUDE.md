@@ -124,3 +124,9 @@ npm install
 - Include branch-specific traditions and insignias
 - Focus on ceremonial and recognition use cases
 - Ensure content accuracy for military audience
+
+### Testing & Development Guidelines
+- DO NOT run `npm run dev` or `npm run build` automatically to test changes
+- The user will handle running development server and builds manually
+- Focus on making code changes and explaining what was done
+- Let the user verify functionality in their own environment
