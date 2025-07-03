@@ -56,14 +56,14 @@
             v-for="(coin, index) in filteredCoins"
             :key="index"
             @click="openLightbox(coin, index)"
-            class="group cursor-pointer bg-slate-800/60 backdrop-blur-sm rounded-xl overflow-hidden shadow-xl ring-1 ring-white/5 hover:ring-orange-500/20 transition-all duration-300 hover:-translate-y-2"
+            class="group cursor-pointer bg-slate-800/60 backdrop-blur-sm rounded-xl overflow-hidden shadow-xl ring-1 ring-white/5 hover:ring-orange-500/10 transition-all duration-300 hover:-translate-y-1"
           >
             <!-- Coin Image -->
             <div class="aspect-square overflow-hidden bg-slate-700/50">
               <img
                 :src="coin.image"
                 :alt="coin.description"
-                class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                class="w-full h-full object-cover"
               />
             </div>
 
@@ -103,92 +103,137 @@
     </div>
 
     <!-- Lightbox Modal -->
-    <div
-      v-if="lightboxOpen"
-      @click="closeLightbox"
-      class="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+    <Transition
+      enter-active-class="ease-out duration-300"
+      enter-from-class="opacity-0"
+      enter-to-class="opacity-100"
+      leave-active-class="ease-in duration-200"
+      leave-from-class="opacity-100"
+      leave-to-class="opacity-0"
     >
-      <div @click.stop class="max-w-4xl w-full bg-slate-800 rounded-xl overflow-hidden shadow-2xl">
-        <!-- Modal Header -->
-        <div class="flex items-center justify-between p-6 border-b border-slate-700">
-          <div>
-            <h3 class="text-2xl font-bold text-white">{{ selectedCoin?.unit }}</h3>
-            <p class="text-slate-300">{{ selectedCoin?.branch }} • {{ selectedCoin?.date }}</p>
-          </div>
-          <button @click="closeLightbox" class="text-slate-400 hover:text-white transition-colors">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
-
-        <!-- Modal Content -->
-        <div class="grid md:grid-cols-2 gap-8 p-6">
-          <!-- Large Image -->
-          <div class="aspect-square bg-slate-700/50 rounded-lg overflow-hidden">
-            <img
-              :src="selectedCoin?.image"
-              :alt="selectedCoin?.description"
-              class="w-full h-full object-cover"
-            />
-          </div>
-
-          <!-- Coin Details -->
-          <div class="space-y-6">
-            <div>
-              <h4 class="text-lg font-semibold text-white mb-2">Description</h4>
-              <p class="text-slate-300">{{ selectedCoin?.description }}</p>
-            </div>
-
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <h5 class="font-medium text-white mb-1">Size</h5>
-                <p class="text-slate-300">{{ selectedCoin?.size }}</p>
-              </div>
-              <div>
-                <h5 class="font-medium text-white mb-1">Plating</h5>
-                <p class="text-slate-300">{{ selectedCoin?.plating }}</p>
-              </div>
-              <div>
-                <h5 class="font-medium text-white mb-1">Edge</h5>
-                <p class="text-slate-300">{{ selectedCoin?.edge }}</p>
-              </div>
-              <div>
-                <h5 class="font-medium text-white mb-1">Quantity</h5>
-                <p class="text-slate-300">{{ selectedCoin?.quantity }}</p>
-              </div>
-            </div>
-
-            <!-- Navigation -->
-            <div class="flex items-center justify-between pt-6 border-t border-slate-700">
+      <div
+        v-if="lightboxOpen"
+        @click="closeLightbox"
+        class="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+      >
+        <Transition
+          appear
+          enter-active-class="ease-out duration-300"
+          enter-from-class="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+          enter-to-class="opacity-100 translate-y-0 sm:scale-100"
+          leave-active-class="ease-in duration-200"
+          leave-from-class="opacity-100 translate-y-0 sm:scale-100"
+          leave-to-class="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+        >
+          <div @click.stop class="relative transform overflow-hidden bg-slate-800 shadow-2xl sm:max-w-6xl sm:w-full sm:rounded-2xl">
+            <!-- Close Button - Absolute positioned -->
+            <div class="absolute right-0 top-0 hidden pr-4 pt-4 sm:block">
               <button
-                @click="previousCoin"
-                :disabled="currentIndex === 0"
-                class="flex items-center gap-2 px-4 py-2 bg-slate-700 text-white rounded-lg hover:bg-slate-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                @click="closeLightbox"
+                type="button"
+                class="rounded-md bg-slate-800 text-slate-400 hover:text-slate-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-slate-800"
               >
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                </svg>
-                Previous
-              </button>
-              
-              <span class="text-slate-400">{{ currentIndex + 1 }} of {{ filteredCoins.length }}</span>
-              
-              <button
-                @click="nextCoin"
-                :disabled="currentIndex === filteredCoins.length - 1"
-                class="flex items-center gap-2 px-4 py-2 bg-slate-700 text-white rounded-lg hover:bg-slate-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                Next
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                <span class="sr-only">Close</span>
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
             </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2">
+              <!-- Image Section -->
+              <div class="relative bg-slate-700 lg:order-first">
+                <div class="flex h-96 items-center justify-center lg:h-full">
+                  <img
+                    :src="selectedCoin?.image"
+                    :alt="selectedCoin?.description"
+                    class="h-full w-full object-contain p-8"
+                  />
+                </div>
+              </div>
+
+              <!-- Content Section -->
+              <div class="flex flex-col justify-between p-6 sm:p-8 lg:p-12">
+                <!-- Header -->
+                <div>
+                  <div class="mb-4">
+                    <div class="inline-flex items-center rounded-full bg-orange-500/10 px-3 py-1 text-sm font-medium text-orange-400">
+                      {{ selectedCoin?.branch }}
+                    </div>
+                  </div>
+                  
+                  <h2 class="text-2xl font-bold tracking-tight text-white sm:text-3xl">
+                    {{ selectedCoin?.unit }}
+                  </h2>
+                  
+                  <p class="mt-4 text-base text-slate-300">
+                    {{ selectedCoin?.description }}
+                  </p>
+
+                  <!-- Specifications -->
+                  <div class="mt-8">
+                    <h3 class="text-lg font-medium text-white">Specifications</h3>
+                    <dl class="mt-4 grid grid-cols-2 gap-x-4 gap-y-4 text-sm">
+                      <div>
+                        <dt class="font-medium text-white">Size</dt>
+                        <dd class="text-slate-300">{{ selectedCoin?.size }}</dd>
+                      </div>
+                      <div>
+                        <dt class="font-medium text-white">Plating</dt>
+                        <dd class="text-slate-300">{{ selectedCoin?.plating }}</dd>
+                      </div>
+                      <div>
+                        <dt class="font-medium text-white">Edge</dt>
+                        <dd class="text-slate-300">{{ selectedCoin?.edge }}</dd>
+                      </div>
+                      <div>
+                        <dt class="font-medium text-white">Quantity</dt>
+                        <dd class="text-slate-300">{{ selectedCoin?.quantity }}</dd>
+                      </div>
+                      <div>
+                        <dt class="font-medium text-white">Completed</dt>
+                        <dd class="text-slate-300">{{ selectedCoin?.date }}</dd>
+                      </div>
+                    </dl>
+                  </div>
+                </div>
+
+                <!-- Navigation Footer -->
+                <div class="mt-8 flex items-center justify-between border-t border-slate-700 pt-6">
+                  <button
+                    @click="previousCoin"
+                    :disabled="currentIndex === 0"
+                    type="button"
+                    class="inline-flex items-center gap-x-2 rounded-md bg-slate-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-slate-600 hover:bg-slate-600 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    <svg class="-ml-0.5 h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+                    </svg>
+                    Previous
+                  </button>
+                  
+                  <span class="text-sm text-slate-400">
+                    {{ currentIndex + 1 }} of {{ filteredCoins.length }}
+                  </span>
+                  
+                  <button
+                    @click="nextCoin"
+                    :disabled="currentIndex === filteredCoins.length - 1"
+                    type="button"
+                    class="inline-flex items-center gap-x-2 rounded-md bg-slate-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-slate-600 hover:bg-slate-600 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    Next
+                    <svg class="-mr-0.5 h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+        </Transition>
       </div>
-    </div>
+    </Transition>
 
     <SiteFooter />
   </div>
@@ -221,7 +266,7 @@ const branches = ['All Branches', 'Army', 'Navy', 'Air Force', 'Marine Corps', '
 // Sample coin data (this would typically come from an API or CMS)
 const allCoins = ref([
   {
-    image: '/tests/test_1.jpeg',
+    image: '/images/coins/army-coin-render.png',
     unit: '101st Airborne Division',
     branch: 'Army',
     description: 'Custom challenge coin featuring the Screaming Eagles emblem with airborne wings and division insignia.',
@@ -232,7 +277,7 @@ const allCoins = ref([
     quantity: '500 coins'
   },
   {
-    image: '/tests/test_2.jpeg',
+    image: '/images/coins/navy-coin-render.png',
     unit: 'Naval Special Warfare',
     branch: 'Navy',
     description: 'Elite SEAL team challenge coin with trident emblem and team motto in raised relief.',
@@ -243,7 +288,7 @@ const allCoins = ref([
     quantity: '200 coins'
   },
   {
-    image: '/tests/test_3.jpeg',
+    image: '/images/coins/air-force-coin-render.png',
     unit: '23rd Fighter Wing',
     branch: 'Air Force',
     description: 'Fighter wing challenge coin showcasing F-16 aircraft with wing emblem and base location.',
@@ -254,7 +299,7 @@ const allCoins = ref([
     quantity: '750 coins'
   },
   {
-    image: '/tests/test_4.jpeg',
+    image: '/images/coins/marine-corps-coin-render.png',
     unit: '2nd Marine Division',
     branch: 'Marine Corps',
     description: 'Marine Corps division coin featuring eagle, globe, and anchor with divisional history.',
@@ -307,6 +352,28 @@ const allCoins = ref([
     plating: 'Copper',
     edge: 'Diamond Cut',
     quantity: '1200 coins'
+  },
+  {
+    image: '/images/coins/coast-guard-coin-render.png',
+    unit: 'Coast Guard Station Miami',
+    branch: 'Coast Guard',
+    description: 'Coast Guard station coin featuring lighthouse and rescue operations theme.',
+    date: 'November 2023',
+    size: '1.75"',
+    plating: 'Antique Silver',
+    edge: 'Rope Edge',
+    quantity: '400 coins'
+  },
+  {
+    image: '/images/coins/space-force-coin-render.png',
+    unit: 'Space Operations Command',
+    branch: 'Space Force',
+    description: 'Space Force command coin with orbital design and guardian wings.',
+    date: 'October 2023',
+    size: '2.0"',
+    plating: 'Black Nickel',
+    edge: 'Cut Edge',
+    quantity: '300 coins'
   }
 ])
 
