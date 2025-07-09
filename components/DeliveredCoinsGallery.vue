@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Delivered Coins Section -->
-    <div class="bg-slate-800/80 backdrop-blur-sm rounded-xl p-8 shadow-xl ring-1 ring-white/5 mb-16">
+    <div class="hidden bg-slate-800/80 backdrop-blur-sm rounded-xl p-8 shadow-xl ring-1 ring-white/5 mb-16">
       <h3 class="text-xl font-medium text-white mb-8 text-center">Recently Delivered Challenge Coins</h3>
     
     <!-- Scrolling Gallery -->
@@ -24,8 +24,8 @@
     
     </div>
 
-    <!-- Testimonials -->
-    <div class="bg-slate-800/80 backdrop-blur-sm rounded-xl p-8 shadow-xl ring-1 ring-white/5">
+    <!-- Testimonials TODO: Proper spacing instead of mb-16 -->
+    <div class="mb-16 bg-slate-800/80 backdrop-blur-sm rounded-xl p-8 shadow-xl ring-1 ring-white/5">
       <h3 class="text-xl font-medium text-white mb-8 text-center">What Military Leaders Say</h3>
       
       <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
