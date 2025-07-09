@@ -9,7 +9,7 @@
         <!-- Row 1: Image Left, Text Right -->
         <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
           <div class="md:w-1/2">
-            <img src="https://placehold.co/600x400/2d3748/e2e8f0?text=Our+Commitment" alt="Our Commitment to Quality" class="rounded-lg shadow-xl w-full h-auto object-cover border border-transparent hover:border-orange-500/50 hover:scale-105 transform transition-all duration-300 ease-in-out hover:shadow-2xl" />
+            <img src="https://placehold.co/600x400/2d3748/e2e8f0?text=Our+Commitment" alt="Our Commitment to Quality" class="rounded-lg shadow-xl w-full h-auto object-cover border border-transparent" />
           </div>
           <div class="md:w-1/2 text-center md:text-left">
             <h3 class="text-2xl font-semibold mb-4 text-slate-100">A Legacy of Service and Quality</h3>
@@ -22,7 +22,7 @@
         <!-- Row 2: Text Left, Image Right -->
         <div class="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-12">
           <div class="md:w-1/2">
-            <img src="https://placehold.co/600x400/1a202c/cbd5e0?text=Customer+Savings" alt="Passing Savings to Customers" class="rounded-lg shadow-xl w-full h-auto object-cover border border-transparent hover:border-orange-500/50 hover:scale-105 transform transition-all duration-300 ease-in-out hover:shadow-2xl" />
+            <img src="https://placehold.co/600x400/1a202c/cbd5e0?text=Customer+Savings" alt="Passing Savings to Customers" class="rounded-lg shadow-xl w-full h-auto object-cover border border-transparent" />
           </div>
           <div class="md:w-1/2 text-center md:text-left">
             <h3 class="text-2xl font-semibold mb-4 text-slate-100">Small Business, Big Value</h3>
@@ -35,7 +35,7 @@
         <!-- Row 3: Image Left, Text Right (Optional additional content) -->
         <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
           <div class="md:w-1/2">
-            <img src="https://placehold.co/600x400/2d3748/e2e8f0?text=Proudly+Serving" alt="Serving Those Who Serve" class="rounded-lg shadow-xl w-full h-auto object-cover border border-transparent hover:border-orange-500/50 hover:scale-105 transform transition-all duration-300 ease-in-out hover:shadow-2xl" />
+            <img src="https://placehold.co/600x400/2d3748/e2e8f0?text=Proudly+Serving" alt="Serving Those Who Serve" class="rounded-lg shadow-xl w-full h-auto object-cover border border-transparent" />
           </div>
           <div class="md:w-1/2 text-center md:text-left">
             <h3 class="text-2xl font-semibold mb-4 text-slate-100">Our Core Focus</h3>

@@ -1,6 +1,6 @@
 <template>
   <!-- Trust Bar / Engagement Banner -->
-  <div class="relative z-10">
+  <div class="relative z-10 hidden lg:block">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[84rem] py-2">
       <div class="flex items-center justify-between">
         <!-- Trust Metrics -->
@@ -11,7 +11,7 @@
             </svg>
             <span><span class="font-semibold text-white">{{ orderCount }}</span> orders this month</span>
           </div>
-          <div class="hidden sm:flex items-center text-slate-200">
+          <div class="flex items-center text-slate-200">
             <svg class="w-4 h-4 text-orange-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
             </svg>
@@ -20,10 +20,11 @@
         </div>
         
         <!-- Live Order Alert -->
-        <div v-if="latestOrder" class="hidden md:block animate-fade-in-out text-sm text-slate-200">
+        <div v-if="latestOrder" class="animate-fade-in-out text-sm text-slate-200">
           <span class="inline-flex items-center">
             <span class="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
-            {{ latestOrder }}
+            <span class="hidden xl:inline">{{ latestOrder }}</span>
+            <span class="xl:hidden">{{ shortenedOrder }}</span>
           </span>
         </div>
         
@@ -64,6 +65,18 @@ const recentOrders = [
   'SSG. Sarah T. from Camp Pendleton ordered 100 coins',
   'LTC. James B. from Fort Hood ordered 300 coins'
 ]
+
+// Computed property to shorten order text for lg screens
+const shortenedOrder = computed(() => {
+  if (!latestOrder.value) return ''
+  
+  // Format: 'CPT. Mike R., Fort Bragg - 200 pcs.'
+  return latestOrder.value
+    .replace(' from Fort Bragg ordered ', ', Fort Bragg - ')
+    .replace(' from Camp Pendleton ordered ', ', Camp Pendleton - ')
+    .replace(' from Fort Hood ordered ', ', Fort Hood - ')
+    .replace(' coins', ' pcs.')
+})
 
 let orderInterval = null
 let timerInterval = null
