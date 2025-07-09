@@ -1,5 +1,5 @@
 <template>
-  <section id="our-coins" class="py-16 md:py-24 bg-gradient-to-b from-slate-900 to-slate-800">
+  <section id="our-coins" class="py-16 md:py-24 bg-gradient-to-b from-slate-900 to-slate-800 scroll-mt-16">
     <div class="container mx-auto px-4 md:px-6">
       <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-50 text-center mb-12 md:mb-16">
         Discover Our <span class="text-orange-500">Masterfully Crafted Coins</span>
