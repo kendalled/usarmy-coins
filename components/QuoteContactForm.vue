@@ -107,32 +107,7 @@
             >
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label class="block text-sm font-medium text-slate-300 mb-2">
-                Organization/Unit *
-              </label>
-              <input
-                v-model="form.organization"
-                type="text"
-                required
-                class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-colors"
-                placeholder="Enter your unit or organization"
-              >
-            </div>
-            
-            <div>
-              <label class="block text-sm font-medium text-slate-300 mb-2">
-                Rank/Title
-              </label>
-              <input
-                v-model="form.rank"
-                type="text"
-                class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-colors"
-                placeholder="Enter your rank or title"
-              >
-            </div>
-          </div>
+
         </div>
 
         <!-- Project Details -->
@@ -151,34 +126,15 @@
             ></textarea>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label class="block text-sm font-medium text-slate-300 mb-2">
-                Needed By Date
-              </label>
-              <input
-                v-model="form.neededBy"
-                type="date"
-                class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-colors"
-              >
-            </div>
-            
-            <div>
-              <label class="block text-sm font-medium text-slate-300 mb-2">
-                Budget Range
-              </label>
-              <select
-                v-model="form.budgetRange"
-                class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-colors"
-              >
-                <option value="">Select budget range</option>
-                <option value="under-500">Under $500</option>
-                <option value="500-1000">$500 - $1,000</option>
-                <option value="1000-2500">$1,000 - $2,500</option>
-                <option value="2500-5000">$2,500 - $5,000</option>
-                <option value="over-5000">Over $5,000</option>
-              </select>
-            </div>
+          <div>
+            <label class="block text-sm font-medium text-slate-300 mb-2">
+              Needed By Date
+            </label>
+            <input
+              v-model="form.neededBy"
+              type="date"
+              class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-colors"
+            >
           </div>
         </div>
 
@@ -286,11 +242,8 @@ const form = reactive({
   lastName: '',
   email: '',
   phone: '',
-  organization: '',
-  rank: '',
   projectDescription: '',
-  neededBy: '',
-  budgetRange: ''
+  neededBy: ''
 })
 
 const formatQuantity = (quantity) => {

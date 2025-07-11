@@ -1,5 +1,5 @@
 <template>
-  <div class="-mt-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-12 md:py-16">
+  <div class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-12 md:py-16">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[84rem]">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
         <!-- Content Column -->
