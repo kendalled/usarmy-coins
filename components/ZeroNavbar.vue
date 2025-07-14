@@ -1,5 +1,5 @@
 <template>
-  <header class="fixed top-0 left-0 w-full z-50">
+  <header class="fixed top-0 left-0 w-full z-50 overflow-x-hidden">
     <!-- Glass Background covering both navbar and trustbar -->
     <div class="absolute inset-0 bg-black/10 backdrop-blur-md transition-all duration-300 border-b border-slate-700/50 h-[70px] lg:h-[110px]" :class="{ 'bg-black/30': scrolled }"></div>
     
@@ -23,7 +23,7 @@
         <!-- Desktop Navigation -->
         <nav class="hidden md:flex items-center space-x-8">
           <a href="#" class="text-white hover:text-orange-500 transition-colors duration-300 text-sm font-semibold">Pricing</a>
-          <a href="#" class="text-white hover:text-orange-500 transition-colors duration-300 text-sm font-semibold">Units & Departments</a>
+          <a href="/#our-coins" class="text-white hover:text-orange-500 transition-colors duration-300 text-sm font-semibold">Units & Departments</a>
           <a href="#" class="text-white hover:text-orange-500 transition-colors duration-300 text-sm font-semibold">Blog</a>
           <NuxtLink to="/gallery" class="text-white hover:text-orange-500 transition-colors duration-300 text-sm font-semibold">Gallery</NuxtLink>
         </nav>
@@ -53,7 +53,7 @@
       <div class="container mx-auto px-6 py-4">
         <nav class="flex flex-col space-y-4">
           <a href="#" class="text-white hover:text-orange-500 transition-colors duration-300 py-2">Pricing</a>
-          <a href="#" class="text-white hover:text-orange-500 transition-colors duration-300 py-2">Units & Departments</a>
+          <a href="/#our-coins" class="text-white hover:text-orange-500 transition-colors duration-300 py-2">Units & Departments</a>
           <a href="#" class="text-white hover:text-orange-500 transition-colors duration-300 py-2">Blog</a>
           <NuxtLink to="/gallery" class="text-white hover:text-orange-500 transition-colors duration-300 py-2">Gallery</NuxtLink>
           <div class="pt-2 border-t border-gray-800 flex flex-col space-y-3">

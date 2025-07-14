@@ -297,7 +297,7 @@
     </div>
     
     <!-- Full Width Gallery and Testimonials Section -->
-    <div class="mt-24 w-full bg-gradient-to-b from-transparent via-slate-900/50 to-slate-900/50">
+    <div v-show="false" class="mt-24 w-full bg-gradient-to-b from-transparent via-slate-900/50 to-slate-900/50">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[84rem] py-16">
         <div class="text-center mb-16">
           <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Trusted by Military Units Worldwide</h2>

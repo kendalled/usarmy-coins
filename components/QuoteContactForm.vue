@@ -247,12 +247,13 @@ const form = reactive({
 })
 
 const formatQuantity = (quantity) => {
-  if (quantity === "Other") return "Other"
-  return quantity.toLocaleString()
+  if (quantity === "Other" || typeof quantity === 'string') return quantity
+  if (typeof quantity === 'number') return quantity.toLocaleString()
+  return quantity?.toString() || '0'
 }
 
 const formatFileSize = (bytes) => {
-  if (bytes === 0) return '0 Bytes'
+  if (!bytes || bytes === 0) return '0 Bytes'
   const k = 1024
   const sizes = ['Bytes', 'KB', 'MB', 'GB']
   const i = Math.floor(Math.log(bytes) / Math.log(k))

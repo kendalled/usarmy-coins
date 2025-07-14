@@ -6,7 +6,7 @@
         <div class="space-y-8">
           <div>
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
-              Uncompromising Quality, <span class="text-orange-500">Battle-Tested Standards</span>
+              Uncompromising Quality.<br> <span class="text-orange-500">Battle-Tested Standards.</span>
             </h2>
             <div class="space-y-6 text-lg text-slate-300 leading-relaxed">
               <p>
