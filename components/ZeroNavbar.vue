@@ -1,5 +1,5 @@
 <template>
-  <header class="fixed top-0 left-0 w-full z-50 overflow-x-hidden">
+  <header class="fixed top-0 left-0 w-full z-50 overflow-hidden">
     <!-- Glass Background covering both navbar and trustbar -->
     <div class="absolute inset-0 bg-black/10 backdrop-blur-md transition-all duration-300 border-b border-slate-700/50 h-[70px] lg:h-[110px]" :class="{ 'bg-black/30': scrolled }"></div>
     
