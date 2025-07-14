@@ -475,14 +475,14 @@ const packagingOptions = [
     price: 0
   },
   {
-    name: 'Acrylic Case',
-    image: '/packaging/acrylic-case.jpg',
-    price: 1.00
-  },
-  {
     name: 'Velvet Bag',
     image: '/packaging/velvet-bag.jpg',
     price: 0.60
+  },
+  {
+    name: 'Acrylic Case',
+    image: '/packaging/acrylic-case.jpg',
+    price: 1.00
   },
   {
     name: 'Velvet Case',
