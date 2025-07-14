@@ -558,6 +558,12 @@ const formatQuantity = (quantity) => {
 }
 
 
+// Helper function to get packaging price
+const getPackagingPrice = () => {
+  const packaging = packagingOptions.find(p => p.name === selectedPackaging.value)
+  return packaging ? packaging.price : 0
+}
+
 // Price calculations
 const retailPrice = computed(() => {
   if (selectedQuantity.value === 'Other' || !selectedSize.value) return '0.00'
@@ -565,8 +571,13 @@ const retailPrice = computed(() => {
   const price = pricingMatrix[selectedSize.value]?.[selectedQuantity.value]
   if (!price) return '0.00'
   
+  // Calculate coin cost and packaging cost
+  const coinTotal = price * selectedQuantity.value
+  const packagingTotal = getPackagingPrice() * selectedQuantity.value
+  const subtotal = coinTotal + packagingTotal
+  
   // Add 40% markup for retail price
-  const total = price * selectedQuantity.value * 1.4
+  const total = subtotal * 1.4
   return total >= 1000 ? total.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : total.toFixed(2)
 })
 
@@ -576,9 +587,13 @@ const savings = computed(() => {
   const price = pricingMatrix[selectedSize.value]?.[selectedQuantity.value]
   if (!price) return '0.00'
   
-  const total = price * selectedQuantity.value
-  const retailTotal = total * 1.4
-  const savingsAmount = retailTotal - total
+  // Calculate coin cost and packaging cost
+  const coinTotal = price * selectedQuantity.value
+  const packagingTotal = getPackagingPrice() * selectedQuantity.value
+  const subtotal = coinTotal + packagingTotal
+  
+  const retailTotal = subtotal * 1.4
+  const savingsAmount = retailTotal - subtotal
   
   return savingsAmount >= 1000 ? 
     savingsAmount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : 
@@ -592,7 +607,11 @@ const estimatedTotal = computed(() => {
   const price = pricingMatrix[selectedSize.value]?.[selectedQuantity.value]
   if (!price) return '0.00'
   
-  const total = price * selectedQuantity.value
+  // Calculate coin cost and packaging cost
+  const coinTotal = price * selectedQuantity.value
+  const packagingTotal = getPackagingPrice() * selectedQuantity.value
+  const total = coinTotal + packagingTotal
+  
   return total >= 1000 ? total.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : total.toFixed(2)
 })
 
