@@ -20,8 +20,8 @@
         </div>
         
         <!-- Live Order Alert -->
-        <div v-if="latestOrder" class="animate-fade-in-out text-sm text-slate-200">
-          <span class="inline-flex items-center">
+        <div class="text-sm text-slate-200 h-5 flex items-center">
+          <span v-if="latestOrder" class="inline-flex items-center animate-fade-in-out">
             <span class="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
             <span class="hidden xl:inline">{{ latestOrder }}</span>
             <span class="xl:hidden">{{ shortenedOrder }}</span>
