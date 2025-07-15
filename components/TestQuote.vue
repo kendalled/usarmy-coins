@@ -2,7 +2,7 @@
   <div class="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-amber-900/30 pt-32 pb-32">
 
     <!-- Breadcrumb -->
-    <nav aria-label="Breadcrumb" class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[84rem] py-3">
+    <nav aria-label="Breadcrumb" class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[84rem] pb-8">
       <div class="flex items-center space-x-2 text-sm">
         <a href="/#our-coins" class="text-orange-500 hover:text-orange-400 font-medium">Challenge Coins</a>
         <svg class="h-4 w-4 text-gray-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
