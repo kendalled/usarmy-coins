@@ -22,7 +22,7 @@
         
         <!-- Desktop Navigation -->
         <nav class="hidden md:flex items-center space-x-8">
-          <a href="#" class="text-white hover:text-orange-500 transition-colors duration-300 text-sm font-semibold">Pricing</a>
+          <NuxtLink to="/pricing" class="text-white hover:text-orange-500 transition-colors duration-300 text-sm font-semibold">Pricing</NuxtLink>
           <a href="/#our-coins" class="text-white hover:text-orange-500 transition-colors duration-300 text-sm font-semibold">Units & Departments</a>
           <a href="#" class="text-white hover:text-orange-500 transition-colors duration-300 text-sm font-semibold">Blog</a>
           <NuxtLink to="/gallery" class="text-white hover:text-orange-500 transition-colors duration-300 text-sm font-semibold">Gallery</NuxtLink>
@@ -52,7 +52,7 @@
     <div v-if="mobileMenuOpen" class="md:hidden bg-black/95 border-t border-gray-800">
       <div class="container mx-auto px-6 py-4">
         <nav class="flex flex-col space-y-4">
-          <a href="#" class="text-white hover:text-orange-500 transition-colors duration-300 py-2">Pricing</a>
+          <NuxtLink to="/pricing" class="text-white hover:text-orange-500 transition-colors duration-300 py-2">Pricing</NuxtLink>
           <a href="/#our-coins" class="text-white hover:text-orange-500 transition-colors duration-300 py-2">Units & Departments</a>
           <a href="#" class="text-white hover:text-orange-500 transition-colors duration-300 py-2">Blog</a>
           <NuxtLink to="/gallery" class="text-white hover:text-orange-500 transition-colors duration-300 py-2">Gallery</NuxtLink>
