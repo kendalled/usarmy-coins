@@ -444,49 +444,61 @@ const quantities = [
 const platingOptions = [
   {
     name: 'Antique Gold',
-    image: '/images/plating/usarmy-coin-gold.png'
+    image: '/images/plating/antique-gold-logo-pin.png'
   },
   {
     name: 'Antique Silver',
-    image: '/images/plating/usarmy-coin-silver.png'
+    image: '/images/plating/antique-silver-logo-pin.png'
   },
   {
     name: 'Antique Copper',
-    image: '/images/plating/usarmy-coin-copper.png'
+    image: '/images/plating/antique-copper-logo-pin.png'
   },
   {
-    name: 'Black Metal',
-    image: '/images/plating/usarmy-coin-black-metal.png'
+    name: 'Polished Gold',
+    image: '/images/plating/polished-gold-logo-pin.png'
   },
   {
     name: 'Polished Silver',
-    image: '/images/plating/usarmy-coin-silver.png'
+    image: '/images/plating/polished-silver-logo-pin.png'
   },
   {
-    name: 'Nickel',
-    image: '/images/plating/usarmy-coin-nickle.png'
+    name: 'Polished Copper',
+    image: '/images/plating/polished-copper-logo-pin.png'
+  },
+  {
+    name: 'Polished Nickel',
+    image: '/images/plating/polished-nickel-logo-pin.png'
+  },
+  {
+    name: 'Black Metal',
+    image: '/images/plating/black-metal-logo-pin.png'
+  },
+  {
+    name: 'Color Coated',
+    image: '/images/plating/color-coated-logo-pin.png'
   }
 ]
 
 const packagingOptions = [
   {
     name: 'Poly Bag',
-    image: '/packaging/poly-bag.jpg',
+    image: '/images/packaging/poly-bag.jpg',
     price: 0
   },
   {
     name: 'Velvet Bag',
-    image: '/packaging/velvet-bag.jpg',
+    image: '/images/packaging/velvet-bag.jpg',
     price: 0.60
   },
   {
     name: 'Acrylic Case',
-    image: '/packaging/acrylic-case.jpg',
+    image: '/images/packaging/acrylic-case.jpg',
     price: 1.00
   },
   {
     name: 'Velvet Case',
-    image: '/packaging/velvet-case.jpg',
+    image: '/images/packaging/velvet-case.jpg',
     price: 4.00
   }
 ]

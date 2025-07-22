@@ -551,6 +551,8 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
+
 // Define the reactive state
 const menuOpen = ref(false);
 const mobileOpen = ref(false);

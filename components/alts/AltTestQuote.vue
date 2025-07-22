@@ -318,9 +318,12 @@ const platingOptions = [
   'Antique Gold',
   'Antique Silver',
   'Antique Copper',
-  'Bright Gold',
-  'Bright Silver',
-  'Black Nickel'
+  'Polished Gold',
+  'Polished Silver',
+  'Polished Copper',
+  'Polished Nickel',
+  'Black Metal',
+  'Color Coated'
 ]
 
 const attachmentOptions = [

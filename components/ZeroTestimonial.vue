@@ -159,3 +159,7 @@
     </div>
   </div>
 </template>
+
+<script setup>
+// ZeroTestimonial component
+</script>
