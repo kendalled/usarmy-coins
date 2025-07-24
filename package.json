@@ -19,5 +19,8 @@
   "trustedDependencies": [
     "@parcel/watcher",
     "@tailwindcss/oxide"
-  ]
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  }
 }
