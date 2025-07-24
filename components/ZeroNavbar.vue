@@ -22,7 +22,7 @@
         
         <!-- Desktop Navigation -->
         <nav class="hidden md:flex items-center space-x-8">
-          <a href="#" class="text-white hover:text-orange-500 transition-colors duration-300 text-sm font-semibold">Pricing</a>
+          <NuxtLink to="/pricing" class="text-white hover:text-orange-500 transition-colors duration-300 text-sm font-semibold">Pricing</NuxtLink>
           <a href="/#our-coins" class="text-white hover:text-orange-500 transition-colors duration-300 text-sm font-semibold">Units & Departments</a>
           <a href="#" class="text-white hover:text-orange-500 transition-colors duration-300 text-sm font-semibold">Blog</a>
           <NuxtLink to="/gallery" class="text-white hover:text-orange-500 transition-colors duration-300 text-sm font-semibold">Gallery</NuxtLink>
@@ -31,9 +31,9 @@
         <!-- Right Side Buttons -->
         <div class="hidden md:flex items-center space-x-4">
           <a href="#" class="text-white hover:text-orange-500 transition-colors duration-300 text-sm font-semibold">Sign in</a>
-          <a href="#" class="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold py-2 px-4 rounded-md transform transition-all duration-300 ease-in-out hover:-translate-y-0.5 text-sm">
+          <NuxtLink to="/quote" class="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold py-2 px-4 rounded-md transform transition-all duration-300 ease-in-out hover:-translate-y-0.5 text-sm">
             Get a Free Quote
-          </a>
+          </NuxtLink>
         </div>
         
         <!-- Mobile Menu Button -->
@@ -52,15 +52,15 @@
     <div v-if="mobileMenuOpen" class="md:hidden bg-black/95 border-t border-gray-800">
       <div class="container mx-auto px-6 py-4">
         <nav class="flex flex-col space-y-4">
-          <a href="#" class="text-white hover:text-orange-500 transition-colors duration-300 py-2">Pricing</a>
+          <NuxtLink to="/pricing" class="text-white hover:text-orange-500 transition-colors duration-300 py-2">Pricing</NuxtLink>
           <a href="/#our-coins" class="text-white hover:text-orange-500 transition-colors duration-300 py-2">Units & Departments</a>
           <a href="#" class="text-white hover:text-orange-500 transition-colors duration-300 py-2">Blog</a>
           <NuxtLink to="/gallery" class="text-white hover:text-orange-500 transition-colors duration-300 py-2">Gallery</NuxtLink>
           <div class="pt-2 border-t border-gray-800 flex flex-col space-y-3">
             <a href="#" class="text-white hover:text-orange-500 transition-colors duration-300 py-2">Sign in</a>
-            <a href="#" class="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold py-3 px-4 rounded-md transform transition-all duration-300 ease-in-out hover:-translate-y-0.5 text-center">
+            <NuxtLink to="/quote" class="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold py-3 px-4 rounded-md transform transition-all duration-300 ease-in-out hover:-translate-y-0.5 text-center">
               Get a Free Quote
-            </a>
+            </NuxtLink>
           </div>
         </nav>
       </div>
