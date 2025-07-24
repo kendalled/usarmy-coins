@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a production-ready Nuxt 3 e-commerce site for US Army Coins, specializing in custom military challenge coins for all branches of the US military. The site features a modern, responsive design with dynamic quote building, trust-building elements, and a comprehensive gallery of delivered coins.
+This is a production-ready Nuxt 4 e-commerce site for US Army Coins, specializing in custom military challenge coins for all branches of the US military. The site features a modern, responsive design with dynamic quote building, trust-building elements, and a comprehensive gallery of delivered coins.
 
 ## Development Commands
 
@@ -33,7 +33,7 @@ npm install
 ## Architecture & Structure
 
 ### Tech Stack
-- **Framework**: Nuxt 3 (Vue 3, Vite)
+- **Framework**: Nuxt 4 (Vue 3, Vite)
 - **Styling**: Tailwind CSS v4
 - **Content**: @nuxt/content module for markdown pages
 - **Routing**: File-based routing with pages/
@@ -58,10 +58,10 @@ npm install
 - Primary: `orange-500/600` for CTAs and accents
 - Backgrounds: `slate-700/800` for dark themes
 - Text: `white/slate-200` for readability
-- Gradients: `bg-gradient-to-r from-orange-500 to-orange-600` for buttons
+- Gradients: `bg-linear-to-r from-orange-500 to-orange-600` for buttons
 
 **Layout Patterns**:
-- Container: `max-w-[84rem]` with `mx-auto px-4 sm:px-6 lg:px-8`
+- Container: `max-w-336` with `mx-auto px-4 sm:px-6 lg:px-8`
 - Fixed navbar spacing: `pt-24` to account for fixed header
 - Responsive: Mobile-first with `grid-cols-1 md:grid-cols-2` patterns
 
@@ -104,7 +104,7 @@ npm install
 
 ### Component Development
 - Use `<script setup>` syntax for all new components
-- Follow Vue 3 Composition API patterns
+- Follow Vue 4 Composition API patterns
 - Maintain single responsibility principle
 - Extract reusable logic to composables when appropriate
 

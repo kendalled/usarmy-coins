@@ -1,15 +1,20 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+// nuxt.config.ts
+import { defineNuxtConfig } from "nuxt/config";
+import tailwindcss from "@tailwindcss/vite";
+
 export default defineNuxtConfig({
-  compatibilityDate: '2024-04-03',
-  devtools: { enabled: true },
-  css: ['~/assets/css/main.css'],
+  // For Nuxt 4 (if you've upgraded; optional for Nuxt 3)
+  compatibilityDate: "2025-07-15",
 
-  postcss: {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {},
-    },
+  // Specify the source directory
+  srcDir: "app/",
+
+  // Add your main CSS file globally
+  css: ["~/assets/css/main.css"], // Or wherever your main CSS is
+
+  // Integrate Tailwind via Vite plugin
+  vite: {
+    plugins: [tailwindcss()],
   },
-
-  modules: ['@nuxt/content'],
-})
+  // ... other config (e.g., modules, etc.)
+});
