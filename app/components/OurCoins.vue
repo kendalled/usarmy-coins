@@ -22,10 +22,10 @@
       </div>
 
       <div class="text-center mt-16 md:mt-20">
-        <a href="#get-a-quote" 
+        <nuxt-link to="/quote" title="Get a Quote"
            class="inline-block bg-linear-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold text-lg py-4 px-10 rounded-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-0.5 transition-all duration-300 ease-in-out">
           Design Your Custom Coin Today!
-        </a>
+        </nuxt-link>
       </div>
     </div>
   </section>

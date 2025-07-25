@@ -1,7 +1,37 @@
 @import 'tailwindcss';
 
-/* Smooth scroll behavior for anchor links */
-html {
-  scroll-behavior: smooth;
+html, body {
+  overscroll-behavior: none; 
+}
+
+/* Dark theme scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e293b; /* slate-800 */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #475569; /* slate-600 */
+  border-radius: 4px;
+  border: 1px solid #334155; /* slate-700 */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b; /* slate-500 */
+}
+
+::-webkit-scrollbar-corner {
+  background: #1e293b; /* slate-800 */
+}
+
+/* Firefox scrollbar styling */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #475569 #1e293b; /* thumb track */
 }
 

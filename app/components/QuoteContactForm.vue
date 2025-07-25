@@ -1,5 +1,8 @@
 <template>
-  <div class="relative transform overflow-hidden rounded-2xl bg-slate-800 shadow-2xl transition-all max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+  <!-- Modal rounded corners fix - outer container clips content, inner container handles scroll -->
+  <!-- To revert: remove inner div and move overflow-y-auto back to outer container -->
+  <div class="relative transform rounded-2xl bg-slate-800 shadow-2xl transition-all max-w-2xl w-full max-h-[90vh] overflow-hidden">
+    <div class="overflow-y-auto max-h-[90vh] rounded-2xl">
       <!-- Header -->
       <div class="p-6 border-b border-slate-700">
         <div class="flex items-center justify-between">
@@ -9,7 +12,7 @@
           </div>
           <button 
             @click="$emit('close')"
-            class="text-slate-400 hover:text-white transition-colors"
+            class="text-slate-400 hover:text-white transition-colors cursor-pointer"
           >
             <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -133,7 +136,7 @@
             <input
               v-model="form.neededBy"
               type="date"
-              class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-colors"
+              class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-colors [color-scheme:dark]"
             >
           </div>
         </div>
@@ -219,6 +222,7 @@
           </p>
         </div>
       </form>
+    </div>
   </div>
 </template>
 
