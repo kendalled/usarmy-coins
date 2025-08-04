@@ -1,1 +1,11 @@
+User-agent: *
+Allow: /
 
+# Sitemap
+Sitemap: https://usarmycoins.com/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Disallow admin or sensitive areas (none currently)
+# Disallow: /admin/

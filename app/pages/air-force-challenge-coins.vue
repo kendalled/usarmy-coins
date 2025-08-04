@@ -191,6 +191,56 @@ import QualityContentSection from '~/components/QualityContentSection.vue'
 import MilitaryFAQ from '~/components/MilitaryFAQ.vue'
 import FAQSchema from '~/components/FAQSchema.vue'
 
+// SEO Meta Tags
+useSeoMeta({
+  title: 'Custom Air Force Challenge Coins | US Army Coins - Squadron & Wing Coins Made in USA',
+  description: 'Order custom Air Force challenge coins featuring aircraft silhouettes, squadron patches, pilot wings, and aerospace imagery. Premium quality aviation coins designed in USA.',
+  ogTitle: 'Custom Air Force Challenge Coins | US Army Coins - Squadron & Wing Coins Made in USA',
+  ogDescription: 'Order custom Air Force challenge coins featuring aircraft silhouettes, squadron patches, pilot wings, and aerospace imagery. Premium quality aviation coins designed in USA.',
+  ogImage: '/images/coins/air-force-coin-render.png',
+  ogUrl: 'https://usarmycoins.com/air-force-challenge-coins',
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'Custom Air Force Challenge Coins | US Army Coins - Squadron & Wing Coins Made in USA',
+  twitterDescription: 'Order custom Air Force challenge coins featuring aircraft silhouettes, squadron patches, pilot wings, and aerospace imagery. Premium quality aviation coins designed in USA.',
+  twitterImage: '/images/coins/air-force-coin-render.png'
+})
+
+useHead({
+  link: [
+    { rel: 'canonical', href: 'https://usarmycoins.com/air-force-challenge-coins' }
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Custom Air Force Challenge Coins",
+        "description": "Premium custom Air Force challenge coins featuring aircraft silhouettes, squadron patches, pilot wings, and aerospace imagery. Premium quality aviation coins designed in USA.",
+        "brand": {
+          "@type": "Brand",
+          "name": "US Army Coins"
+        },
+        "category": "Military Challenge Coins",
+        "offers": {
+          "@type": "Offer",
+          "availability": "https://schema.org/InStock",
+          "priceCurrency": "USD",
+          "seller": {
+            "@type": "Organization",
+            "name": "US Army Coins"
+          }
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "150"
+        }
+      })
+    }
+  ]
+})
+
 // Air Force-specific FAQs
 const airForceFAQs = [
   {
@@ -232,10 +282,6 @@ const defaultFAQs = [
   {
     question: "What information do I need to provide for my order?",
     answer: "Please provide your unit information, desired artwork or logo, coin size, quantity, plating preference, and any special text or motto. Our design team will work with you to create the perfect coin that represents your unit's pride and tradition."
-  },
-  {
-    question: "Are your coins made in the USA?",
-    answer: "Yes, we proudly manufacture all our challenge coins in the United States using American craftsmanship and the highest quality materials. We believe in supporting American manufacturing while delivering superior products to our military personnel."
   },
   {
     question: "What packaging options are available?",

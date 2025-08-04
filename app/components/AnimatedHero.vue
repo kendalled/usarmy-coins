@@ -30,10 +30,10 @@
               With over two decades of experience, we've proudly crafted premium challenge coins for all branches of the military. From the Army and Navy to the Marines, Air Force, Coast Guard, and Space Force—we serve those who serve our nation.
             </p>
             <div class="flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
-              <a href="#" class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition duration-300">
+              <a href="/quote" class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition duration-300">
                 Get Your Free Quote
               </a>
-              <a href="#" class="bg-transparent hover:bg-white/10 text-white border-2 border-white font-bold py-4 px-8 rounded-lg text-lg transition duration-300">
+              <a href="/gallery" class="bg-transparent hover:bg-white/10 text-white border-2 border-white font-bold py-4 px-8 rounded-lg text-lg transition duration-300">
                 View Our Work
               </a>
             </div>

@@ -41,8 +41,8 @@
           <ul class="space-y-2">
             <li><a href="/" class="text-slate-400 hover:text-orange-500 transition-colors text-sm">Home</a></li>
             <li><a href="/#our-coins" class="text-slate-400 hover:text-orange-500 transition-colors text-sm">Our Coins</a></li>
-            <li><a href="#" class="text-slate-400 hover:text-orange-500 transition-colors text-sm">Custom Design</a></li>
-            <li><a href="#" class="text-slate-400 hover:text-orange-500 transition-colors text-sm">Pricing</a></li>
+            <li><a href="/quote" class="text-slate-400 hover:text-orange-500 transition-colors text-sm">Custom Design</a></li>
+            <li><a href="/pricing" class="text-slate-400 hover:text-orange-500 transition-colors text-sm">Pricing</a></li>
             <li><a href="#" class="text-slate-400 hover:text-orange-500 transition-colors text-sm">About Us</a></li>
             <li><a href="#" class="text-slate-400 hover:text-orange-500 transition-colors text-sm">Contact</a></li>
           </ul>
@@ -52,12 +52,12 @@
         <div>
           <h3 class="text-white font-semibold text-lg mb-4">Products</h3>
           <ul class="space-y-2">
-            <li><a href="/coins/army-coins" class="text-slate-400 hover:text-orange-500 transition-colors text-sm">Army Coins</a></li>
-            <li><a href="/coins/navy-coins" class="text-slate-400 hover:text-orange-500 transition-colors text-sm">Navy Coins</a></li>
-            <li><a href="/coins/air-force-coins" class="text-slate-400 hover:text-orange-500 transition-colors text-sm">Air Force Coins</a></li>
-            <li><a href="/coins/marine-corps-coins" class="text-slate-400 hover:text-orange-500 transition-colors text-sm">Marine Corps Coins</a></li>
-            <li><a href="/coins/coast-guard-coins" class="text-slate-400 hover:text-orange-500 transition-colors text-sm">Coast Guard Coins</a></li>
-            <li><a href="/coins/space-force-coins" class="text-slate-400 hover:text-orange-500 transition-colors text-sm">Space Force Coins</a></li>
+            <li><a href="/army-challenge-coins" class="text-slate-400 hover:text-orange-500 transition-colors text-sm">Army Coins</a></li>
+            <li><a href="/navy-challenge-coins" class="text-slate-400 hover:text-orange-500 transition-colors text-sm">Navy Coins</a></li>
+            <li><a href="/air-force-challenge-coins" class="text-slate-400 hover:text-orange-500 transition-colors text-sm">Air Force Coins</a></li>
+            <li><a href="/marine-corps-challenge-coins" class="text-slate-400 hover:text-orange-500 transition-colors text-sm">Marine Corps Coins</a></li>
+            <li><a href="/coast-guard-challenge-coins" class="text-slate-400 hover:text-orange-500 transition-colors text-sm">Coast Guard Coins</a></li>
+            <li><a href="/space-force-challenge-coins" class="text-slate-400 hover:text-orange-500 transition-colors text-sm">Space Force Coins</a></li>
           </ul>
         </div>
 
@@ -84,7 +84,7 @@
           <div class="flex space-x-6 mt-4 md:mt-0">
             <a href="#" class="text-slate-500 hover:text-orange-500 text-sm transition-colors">Privacy Policy</a>
             <a href="#" class="text-slate-500 hover:text-orange-500 text-sm transition-colors">Terms of Service</a>
-            <a href="#" class="text-slate-500 hover:text-orange-500 text-sm transition-colors">Sitemap</a>
+            <a href="/sitemap.xml" class="text-slate-500 hover:text-orange-500 text-sm transition-colors">Sitemap</a>
           </div>
         </div>
       </div>
