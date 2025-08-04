@@ -12,7 +12,8 @@ export default defineEventHandler((event) => {
     { path: '/commemorative-challenge-coins', priority: '0.8', changefreq: 'monthly' },
     { path: '/custom-shape-challenge-coins', priority: '0.8', changefreq: 'monthly' },
     { path: '/quote', priority: '0.9', changefreq: 'weekly' },
-    { path: '/pricing', priority: '0.8', changefreq: 'monthly' }
+    { path: '/pricing', priority: '0.8', changefreq: 'monthly' },
+    { path: '/blog', priority: '0.8', changefreq: 'weekly' }
   ]
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>

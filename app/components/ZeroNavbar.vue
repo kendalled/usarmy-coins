@@ -24,7 +24,7 @@
         <nav class="hidden md:flex items-center space-x-8">
           <NuxtLink to="/pricing" class="text-white hover:text-orange-500 transition-colors duration-300 text-sm font-semibold">Pricing</NuxtLink>
           <a href="/#our-coins" class="text-white hover:text-orange-500 transition-colors duration-300 text-sm font-semibold">Units & Departments</a>
-          <a href="#" class="text-white hover:text-orange-500 transition-colors duration-300 text-sm font-semibold">Blog</a>
+          <NuxtLink to="/blog" class="text-white hover:text-orange-500 transition-colors duration-300 text-sm font-semibold">Blog</NuxtLink>
           <NuxtLink to="/gallery" class="text-white hover:text-orange-500 transition-colors duration-300 text-sm font-semibold">Gallery</NuxtLink>
         </nav>
         
@@ -54,7 +54,7 @@
         <nav class="flex flex-col space-y-4">
           <NuxtLink to="/pricing" class="text-white hover:text-orange-500 transition-colors duration-300 py-2">Pricing</NuxtLink>
           <a href="/#our-coins" class="text-white hover:text-orange-500 transition-colors duration-300 py-2">Units & Departments</a>
-          <a href="#" class="text-white hover:text-orange-500 transition-colors duration-300 py-2">Blog</a>
+          <NuxtLink to="/blog" class="text-white hover:text-orange-500 transition-colors duration-300 py-2">Blog</NuxtLink>
           <NuxtLink to="/gallery" class="text-white hover:text-orange-500 transition-colors duration-300 py-2">Gallery</NuxtLink>
           <div class="pt-2 border-t border-gray-800 flex flex-col space-y-3">
             <a href="#" class="text-white hover:text-orange-500 transition-colors duration-300 py-2">Sign in</a>
