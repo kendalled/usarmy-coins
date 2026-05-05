@@ -9,6 +9,23 @@ export default defineNuxtConfig({
   // Specify the source directory
   srcDir: "app/",
 
+  // Modules
+  modules: ["@nuxt/content"],
+
+  // Nuxt Content: use sqlite adapter. When running under Bun, Content will
+  // automatically use Bun's built-in sqlite driver (bun:sqlite).
+  content: {
+    // Use sqlite; Content will auto-select bun:sqlite at runtime when running under Bun.
+    database: {
+      type: "sqlite",
+      filename: ".data/content/contents.sqlite",
+    },
+    experimental: {
+      // Build/prerender under Node use the native Node sqlite connector (no native deps or postinstall)
+      sqliteConnector: "native",
+    },
+  },
+
   // Add your main CSS file globally
   css: ["~/assets/css/main.css"], // Or wherever your main CSS is
 
@@ -16,5 +33,9 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  // ... other config (e.g., modules, etc.)
+
+  // Ensure server build targets Bun when deploying/running under Bun
+  nitro: {
+    preset: "bun",
+  },
 });

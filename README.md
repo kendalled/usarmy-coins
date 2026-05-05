@@ -33,27 +33,14 @@ A full-featured, production-ready Nuxt 3 site for a business that designs and se
 ---
 
 ## 🏁 Getting Started
-Clone the repo and install dependencies:
+Clone the repo and install dependencies with Bun:
 
 ```bash
-# npm
-npm install
-# or
-yarn install
-# or
-pnpm install
-# or
 bun install
 ```
 
 Start the dev server:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
 bun run dev
 ```
 
@@ -64,11 +51,11 @@ Visit [http://localhost:3000](http://localhost:3000) to see the site.
 ## 🏗️ Build & Preview
 Build for production:
 ```bash
-npm run build
+bun run build
 ```
 Preview the production build:
 ```bash
-npm run preview
+bun run preview
 ```
 
 ---
