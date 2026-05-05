@@ -65,7 +65,7 @@
         class="mx-auto mt-16 grid max-w-7xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
       >
         <article
-          v-for="post in posts"
+          v-for="post in transformedPosts"
           :key="post.slug"
           class="group relative flex flex-col overflow-hidden rounded-2xl bg-slate-700/40 ring-1 ring-white/10 transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-700/60"
         >
@@ -176,60 +176,28 @@
 </template>
 
 <script setup>
-const posts = [
-  {
-    slug: "army-challenge-coin-design-principles",
-    title: "Army challenge coin design principles that stand the test of time",
-    excerpt:
-      "From heraldry and unit identity to typography and negative space, learn the design patterns that make coins look official, legible, and timeless.",
-    image:
-      "https://images.unsplash.com/photo-1562813733-b31f71025d54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
-    category: "Design",
-    date: "Mar 16, 2024",
-    datetime: "2024-03-16",
-    author: {
-      name: "Michael Foster",
-      role: "Senior Designer",
-      avatar:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80",
-      branchLabel: "U.S. Army",
-    },
+const posts = await queryCollection("blog")
+  .order("date", "DESC")
+  .all();
+
+// Transform posts to match the expected format
+const transformedPosts = posts.map((post) => ({
+  slug: post.path.replace("/blog/", ""),
+  title: post.title,
+  excerpt: post.description,
+  image: post.image,
+  category: post.category,
+  date: new Date(post.date).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  }),
+  datetime: post.date,
+  author: {
+    name: post.author.name,
+    role: post.author.role,
+    avatar: post.author.avatar,
+    branchLabel: post.author.bio,
   },
-  {
-    slug: "plating-options-gold-silver-black-nickel",
-    title: "Gold vs. silver vs. black nickel: choosing the right plating",
-    excerpt:
-      "See how finish impacts reflectivity, contrast, and perceived depth — with pro tips for enamel color pairing and edge treatments.",
-    image:
-      "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80",
-    category: "Plating",
-    date: "Mar 10, 2024",
-    datetime: "2024-03-10",
-    author: {
-      name: "Lindsay Walton",
-      role: "Production Lead",
-      avatar:
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80",
-      branchLabel: "Manufacturing",
-    },
-  },
-  {
-    slug: "unit-traditions-and-coin-presentations",
-    title: "Unit traditions: presenting coins with purpose and pride",
-    excerpt:
-      "From formation presentations to retirement ceremonies, learn proper etiquette and memorable ways to coin your teammates.",
-    image:
-      "https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-    category: "Traditions",
-    date: "Feb 12, 2024",
-    datetime: "2024-02-12",
-    author: {
-      name: "Tom Cook",
-      role: "Veteran Advisor",
-      avatar:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80",
-      branchLabel: "Veteran",
-    },
-  },
-];
+}));
 </script>
