@@ -14,31 +14,31 @@
 
         <!-- Branch Selection -->
         <div class="mb-12">
-          <h3 class="text-xl font-semibold text-white mb-6 text-center">Select Your Military Branch</h3>
-          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <h3 class="text-2xl font-semibold text-white mb-8 text-center">Select Your Military Branch</h3>
+          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             <button
               v-for="branch in branches"
               :key="branch.id"
               @click="selectedBranch = branch.id"
-              class="cursor-pointer relative group bg-slate-800/50 hover:bg-slate-700/50 rounded-xl p-4 transition-all duration-300 ring-1 ring-white/5 hover:ring-orange-500/50"
+              class="cursor-pointer relative group bg-slate-800/50 hover:bg-slate-700/50 rounded-2xl p-6 transition-all duration-300 ring-1 ring-white/5 hover:ring-orange-500/50 hover:-translate-y-1 hover:shadow-xl"
               :class="{ 'ring-2 ring-orange-500 bg-slate-700/50': selectedBranch === branch.id }"
             >
               <div class="text-center">
-                <div class="w-16 h-16 mx-auto mb-3 rounded-lg overflow-hidden bg-slate-700/50">
+                <div class="w-24 h-24 mx-auto mb-4 rounded-xl overflow-hidden bg-slate-700/50 ring-1 ring-white/10">
                   <img 
                     :src="branch.image" 
                     :alt="branch.name"
                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   >
                 </div>
-                <div class="text-sm font-medium text-slate-200 group-hover:text-orange-400 transition-colors">
+                <div class="text-base font-semibold text-slate-200 group-hover:text-orange-400 transition-colors">
                   {{ branch.name }}
                 </div>
               </div>
               <!-- Selected indicator -->
               <div 
                 v-if="selectedBranch === branch.id"
-                class="absolute top-2 right-2 w-4 h-4 rounded-full bg-orange-500"
+                class="absolute top-3 right-3 w-5 h-5 rounded-full bg-orange-500 ring-2 ring-white"
               ></div>
             </button>
           </div>
