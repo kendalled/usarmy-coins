@@ -130,7 +130,7 @@ onMounted(() => {
   setTimeout(() => {
     orderInterval = setInterval(showNextOrder, 15000);
   }, 1000);
-  
+
   // Initialize timer with client-only updates to prevent hydration mismatch
   const updateTimer = () => {
     const now = new Date();

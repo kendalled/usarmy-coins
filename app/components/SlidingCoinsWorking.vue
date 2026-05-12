@@ -1,18 +1,21 @@
 <template>
   <div class="scroller bg-gray-900" data-direction="left" data-speed="fast">
     <div class="scroller__inner">
-      <div v-for="card in cards" class="w-96 shrink-0 p-4 mx-2 bg-gray-800 rounded-lg text-center shadow-lg">
-      <img :src="card.image" alt="Army Coin" class="mx-auto mb-4" />
-      <h2 class="text-xl font-bold text-gray-100">{{ card.title }}</h2>
-      <p class="text-gray-400">{{ card.description }}</p>
-    </div>
+      <div
+        v-for="card in cards"
+        class="w-96 shrink-0 p-4 mx-2 bg-gray-800 rounded-lg text-center shadow-lg"
+      >
+        <img :src="card.image" alt="Army Coin" class="mx-auto mb-4" />
+        <h2 class="text-xl font-bold text-gray-100">{{ card.title }}</h2>
+        <p class="text-gray-400">{{ card.description }}</p>
+      </div>
       <!-- <img src="/nav-marines.webp" alt="" />
       <img src="/nav-marines.webp" alt="" />
       <img src="/nav-marines.webp" alt="" />
       <img src="/nav-marines.webp" alt="" />
       <img src="/nav-marines.webp" alt="" />
       <img src="/nav-marines.webp" alt="" /> -->
-      </div>
+    </div>
   </div>
 </template>
 
@@ -23,38 +26,58 @@ onMounted(() => {
   console.log("This runs after the component has been mounted.");
   const scrollers = document.querySelectorAll(".scroller");
 
-// If a user hasn't opted in for recuded motion, then we add the animation
-if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  addAnimation();
-}
+  // If a user hasn't opted in for recuded motion, then we add the animation
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    addAnimation();
+  }
 
-function addAnimation() {
-  scrollers.forEach((scroller) => {
-    // add data-animated="true" to every `.scroller` on the page
-    scroller.setAttribute("data-animated", true);
+  function addAnimation() {
+    scrollers.forEach((scroller) => {
+      // add data-animated="true" to every `.scroller` on the page
+      scroller.setAttribute("data-animated", true);
 
-    // Make an array from the elements within `.scroller-inner`
-    const scrollerInner = scroller.querySelector(".scroller__inner");
-    const scrollerContent = Array.from(scrollerInner.children);
+      // Make an array from the elements within `.scroller-inner`
+      const scrollerInner = scroller.querySelector(".scroller__inner");
+      const scrollerContent = Array.from(scrollerInner.children);
 
-    // For each item in the array, clone it
-    // add aria-hidden to it
-    // add it into the `.scroller-inner`
-    scrollerContent.forEach((item) => {
-      const duplicatedItem = item.cloneNode(true);
-      duplicatedItem.setAttribute("aria-hidden", true);
-      scrollerInner.appendChild(duplicatedItem);
+      // For each item in the array, clone it
+      // add aria-hidden to it
+      // add it into the `.scroller-inner`
+      scrollerContent.forEach((item) => {
+        const duplicatedItem = item.cloneNode(true);
+        duplicatedItem.setAttribute("aria-hidden", true);
+        scrollerInner.appendChild(duplicatedItem);
+      });
     });
-  });
-}
+  }
 });
 
 const cards = [
-  { title: "Army Coins", description: "Award soldiers with valor and prestige.", image: "/nav-marines.webp" },
-  { title: "Coast Guard Coins", description: "Recognize those who protect our national waters.", image: "/nav-marines.webp" },
-  { title: "Navy Coins", description: "Honor sailors for courage and commitment.", image: "/nav-marines.webp" },
-  { title: "Marine Coins", description: "Recognize incredible strength and courage.", image: "/nav-marines.webp" },
-  { title: "Space Force Coins", description: "Recognize incredible strength and courage.", image: "/nav-marines.webp" },
+  {
+    title: "Army Coins",
+    description: "Award soldiers with valor and prestige.",
+    image: "/nav-marines.webp",
+  },
+  {
+    title: "Coast Guard Coins",
+    description: "Recognize those who protect our national waters.",
+    image: "/nav-marines.webp",
+  },
+  {
+    title: "Navy Coins",
+    description: "Honor sailors for courage and commitment.",
+    image: "/nav-marines.webp",
+  },
+  {
+    title: "Marine Coins",
+    description: "Recognize incredible strength and courage.",
+    image: "/nav-marines.webp",
+  },
+  {
+    title: "Space Force Coins",
+    description: "Recognize incredible strength and courage.",
+    image: "/nav-marines.webp",
+  },
 ];
 </script>
 
@@ -151,5 +174,4 @@ body {
 .test {
   background: red !important;
 }
-
 </style>

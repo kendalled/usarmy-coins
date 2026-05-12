@@ -176,9 +176,7 @@
 </template>
 
 <script setup>
-const posts = await queryCollection("blog")
-  .order("date", "DESC")
-  .all();
+const posts = await queryCollection("blog").order("date", "DESC").all();
 
 // Transform posts to match the expected format
 const transformedPosts = posts.map((post) => ({
