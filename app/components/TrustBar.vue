@@ -79,31 +79,8 @@ import { ref, onMounted, onUnmounted, computed } from "vue";
 const orderCount = ref(847);
 const latestOrder = ref(null);
 const productionTimer = ref("23:45:12");
-// Calculate delivery date (2 weeks from current date)
-const deliveryDate = computed(() => {
-  const now = new Date();
-  const deliveryDate = new Date(now.getTime() + 14 * 24 * 60 * 60 * 1000); // Add 14 days in milliseconds
-
-  // Format as "Month DD" (e.g., "May 15")
-  const monthNames = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
-  const month = monthNames[deliveryDate.getMonth()];
-  const day = deliveryDate.getDate();
-
-  return `${month} ${day}`;
-});
+// Keep SSR output stable, then update to user's local date + 14 days on mount.
+const deliveryDate = ref("calculating...");
 
 // Simulated latest orders
 const recentOrders = [
@@ -124,20 +101,37 @@ const shortenedOrder = computed(() => {
     .replace(" coins", " pcs.");
 });
 
+// Use deterministic order rotation instead of random
+let orderIndex = 0;
 let orderInterval = null;
 let timerInterval = null;
 
-onMounted(() => {
-  // Simulate live orders
-  orderInterval = setInterval(() => {
-    latestOrder.value =
-      recentOrders[Math.floor(Math.random() * recentOrders.length)];
-    setTimeout(() => {
-      latestOrder.value = null;
-    }, 5000);
-  }, 15000);
+const showNextOrder = () => {
+  latestOrder.value = recentOrders[orderIndex % recentOrders.length];
+  orderIndex++;
+  setTimeout(() => {
+    latestOrder.value = null;
+  }, 5000);
+};
 
-  // Update production timer
+onMounted(() => {
+  const updateDeliveryDate = () => {
+    const now = new Date();
+    const plus14 = new Date(now.getTime() + 14 * 24 * 60 * 60 * 1000);
+    deliveryDate.value = plus14.toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+    });
+  };
+
+  updateDeliveryDate();
+
+  // Start with deterministic order rotation after a delay to prevent hydration issues
+  setTimeout(() => {
+    orderInterval = setInterval(showNextOrder, 15000);
+  }, 1000);
+  
+  // Initialize timer with client-only updates to prevent hydration mismatch
   const updateTimer = () => {
     const now = new Date();
     const end = new Date(now);
@@ -151,8 +145,11 @@ onMounted(() => {
     productionTimer.value = `${hours.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
   };
 
-  updateTimer();
-  timerInterval = setInterval(updateTimer, 1000);
+  // Only update timer on client after small delay to prevent hydration mismatch
+  setTimeout(() => {
+    updateTimer();
+    timerInterval = setInterval(updateTimer, 1000);
+  }, 500);
 });
 
 onUnmounted(() => {

@@ -11,12 +11,15 @@
         <div class="flex items-center">
           <NuxtLink to="/" class="flex items-center">
             <span class="sr-only">US Army Coins</span>
-            <svg class="h-8 w-8 mr-2" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="20" cy="20" r="18" fill="#181d23" stroke="#ea580c" stroke-width="3" />
-              <rect x="14" y="10" width="12" height="20" rx="6" fill="#ea580c" />
-              <circle cx="20" cy="20" r="4" fill="#fff" />
-            </svg>
-            <span class="text-white font-bold text-2xl tracking-wide">US Army Coins</span>
+            <img
+              src="/images/misc/us-army-coins-logo.png"
+              alt="US Army Coins"
+              class="h-10 w-auto md:h-12"
+              width="240"
+              height="80"
+              loading="eager"
+              decoding="async"
+            />
           </NuxtLink>
         </div>
         
@@ -67,7 +70,12 @@
       </div>
     </div>
     
-    <TrustBar />
+    <ClientOnly>
+      <TrustBar />
+      <template #fallback>
+        <div class="h-10 bg-transparent"></div>
+      </template>
+    </ClientOnly>
   </header>
 </template>
 

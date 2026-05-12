@@ -4,7 +4,7 @@
     <nav class="mx-auto flex max-w-336 gap-8 px-6 transition-all duration-200 ease-in-out lg:px-5 py-4">
         <div class="relative flex items-center">
             <a href="/">
-              <img src="/ArmyLogoButton.png" class="w-24 h-auto" loading="lazy" style="color:transparent" width="32" height="32">
+              <img src="/images/misc/us-army-coins-logo.png" class="w-24 h-auto" loading="lazy" style="color:transparent" width="240" height="80">
             </a>
         </div>
         <ul class="hidden items-center justify-center gap-6 md:flex">
